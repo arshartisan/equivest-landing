@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r Sheet '/f/Projects/Ella Q8/ella-q8-international/src' --include=*.tsx --include=*.ts)",
+      "Bash(npx shadcn@latest init -d)"
+    ]
+  }
+}
