@@ -95,7 +95,7 @@ export default function ExecutionPerformanceSection() {
               className={`group relative flex aspect-3/4 cursor-pointer flex-col overflow-hidden rounded-3xl ${metric.bg} p-6`}
             >
               {/* Icon — top left */}
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black/15">
                 <metric.icon
                   className="h-6 w-6 text-gold"
                   strokeWidth={1.5}
