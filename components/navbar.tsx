@@ -19,10 +19,13 @@ const SCROLL_THRESHOLD = 50;
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > SCROLL_THRESHOLD);
+      // Detect when navbar crosses into dark sections (past the hero)
+      setPastHero(window.scrollY > window.innerHeight * 0.8);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -38,17 +41,25 @@ export default function Navbar() {
         width: collapsed ? "fit-content" : "896px",
       }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="fixed top-2 left-0 right-0 z-50 bg-black/10 backdrop-blur-md mx-auto rounded-full overflow-hidden"
+      className={`fixed top-2 left-0 right-0 z-50 backdrop-blur-md mx-auto rounded-full overflow-hidden transition-colors duration-300 ${pastHero ? "bg-white/5" : "bg-black/10"}`}
     >
       <nav className="relative mx-auto flex h-16 items-center justify-between p-1.5">
-        {/* Logo */}
-        <Link href="/" className="shrink-0 mx-4">
+        {/* Logo — swap to light version on dark backgrounds */}
+        <Link href="/" className="shrink-0 mx-4 relative h-8 w-[140px]">
           <Image
             src="/assets/images/logo.png"
             alt="Equivest"
             width={140}
             height={32}
-            className="h-8 w-auto"
+            className={`absolute inset-0 h-8 w-auto transition-opacity duration-300 ${pastHero ? "opacity-0" : "opacity-100"}`}
+            priority
+          />
+          <Image
+            src="/assets/images/light-logo.png"
+            alt="Equivest"
+            width={140}
+            height={32}
+            className={`absolute inset-0 h-8 w-auto transition-opacity duration-300 ${pastHero ? "opacity-100" : "opacity-0"}`}
             priority
           />
         </Link>
@@ -67,7 +78,7 @@ export default function Navbar() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-base tracking-tighter font-medium text-[#0B0F14]/70 transition-colors duration-150 hover:text-[#0B0F14]"
+                    className={`text-base tracking-tighter font-medium transition-colors duration-150 ${pastHero ? "text-white/70 hover:text-white" : "text-[#0B0F14]/70 hover:text-[#0B0F14]"}`}
                   >
                     {link.label}
                   </Link>
