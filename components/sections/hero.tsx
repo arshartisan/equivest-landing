@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import BlurText from "@/components/ui/blur-text";
 import CTA from "../CTA";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -21,17 +21,35 @@ export default function HeroSection() {
           className="mx-auto flex max-w-5xl flex-col items-center"
         >
           {/* Headline */}
-          <motion.h1
-            variants={{
-              hidden: { opacity: 0, y: 24 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
-            }}
-            className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-[#0B0F14] md:text-6xl"
-          >
-            INSTITUTIONAL LIQUIDITY.
-            <br />
-            AGGREGATED. DELIVERED.
-          </motion.h1>
+          <div className="flex flex-col items-center">
+            <BlurText
+              text="INSTITUTIONAL LIQUIDITY."
+              renderAs="h1"
+              className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-[#0B0F14] md:text-6xl justify-center"
+              animateBy="words"
+              delay={80}
+              direction="bottom"
+              stepDuration={0.4}
+            />
+            <BlurText
+              text="AGGREGATED. "
+              renderAs="h1"
+              className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-[#0B0F14] md:text-6xl justify-center"
+              animateBy="words"
+              delay={80}
+              direction="bottom"
+              stepDuration={0.4}
+            />
+            <BlurText
+              text="DELIVERED."
+              renderAs="h1"
+              className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-[#0B0F14] md:text-6xl justify-center"
+              animateBy="words"
+              delay={80}
+              direction="bottom"
+              stepDuration={0.4}
+            />
+          </div>
 
           {/* Subtitle */}
           <motion.p
