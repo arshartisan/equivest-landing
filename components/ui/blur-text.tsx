@@ -3,16 +3,18 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState, useMemo } from "react";
 
+type AnimValue = string | number;
+
 const buildKeyframes = (
-  from: Record<string, unknown>,
-  steps: Record<string, unknown>[]
+  from: Record<string, AnimValue>,
+  steps: Record<string, AnimValue>[]
 ) => {
   const keys = new Set([
     ...Object.keys(from),
     ...steps.flatMap((s) => Object.keys(s)),
   ]);
 
-  const keyframes: Record<string, unknown[]> = {};
+  const keyframes: Record<string, AnimValue[]> = {};
   keys.forEach((k) => {
     keyframes[k] = [from[k], ...steps.map((s) => s[k])];
   });
@@ -27,8 +29,8 @@ interface BlurTextProps {
   direction?: "top" | "bottom";
   threshold?: number;
   rootMargin?: string;
-  animationFrom?: Record<string, unknown>;
-  animationTo?: Record<string, unknown>[];
+  animationFrom?: Record<string, string | number>;
+  animationTo?: Record<string, string | number>[];
   easing?: (t: number) => number;
   onAnimationComplete?: () => void;
   stepDuration?: number;
@@ -102,7 +104,6 @@ export default function BlurText({
     stepCount === 1 ? 0 : i / (stepCount - 1)
   );
 
-  // Build a lookup for highlight words
   const getHighlightClass = (word: string) => {
     const match = highlightWords.find(
       (hw) => word.toLowerCase() === hw.text.toLowerCase()
@@ -110,7 +111,7 @@ export default function BlurText({
     return match?.className;
   };
 
-  const Tag = renderAs as keyof JSX.IntrinsicElements;
+  const Tag = renderAs as React.ElementType;
   const MotionTag = motion.create(Tag);
 
   return (
