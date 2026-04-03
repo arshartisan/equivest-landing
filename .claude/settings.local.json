@@ -16,7 +16,8 @@
       "Bash(gh --version)",
       "WebFetch(domain:api.github.com)",
       "Bash(xargs grep:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(pnpm install:*)"
     ]
   }
 }

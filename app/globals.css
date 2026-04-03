@@ -126,3 +126,14 @@
     @apply font-sans scroll-smooth;
   }
 }
+
+@keyframes footerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

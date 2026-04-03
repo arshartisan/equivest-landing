@@ -2,6 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
+const ease = [0.25, 0.46, 0.45, 0.94] as const;
+
 const navLinks = [
   { label: "Home", href: "#" },
   { label: "Regulation", href: "#regulation" },
@@ -20,6 +24,18 @@ const socialIcons = [
   { src: "/assets/images/icons/icons8-whatsapp-50.svg", href: "#", label: "WhatsApp" },
 ];
 
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
+};
+
 export default function Footer() {
   return (
     <footer className="bg-[#0B0F14] px-6 pb-0 overflow-hidden">
@@ -27,12 +43,25 @@ export default function Footer() {
 
       <div className="mx-auto max-w-7xl pt-14 md:pt-20">
         {/* Row 1: Nav links | Contact + socials | Address */}
-        <div className="grid gap-10 md:grid-cols-3 md:gap-8">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid gap-10 md:grid-cols-3 md:gap-8"
+        >
           {/* Col 1: Navigation */}
-          <div>
+          <motion.div variants={fadeUp}>
             <ul className="flex flex-col gap-2.5 tracking-tighter">
-              {navLinks.map((link) => (
-                <li key={link.label}>
+              {navLinks.map((link, i) => (
+                <li
+                  key={link.label}
+                  style={{
+                    opacity: 0,
+                    animation: `footerFadeIn 0.4s cubic-bezier(0.25,0.46,0.45,0.94) forwards`,
+                    animationDelay: `${i * 50}ms`,
+                  }}
+                >
                   <Link
                     href={link.href}
                     className="text-sm text-[#A0AEC0]/70 transition-colors duration-200 hover:text-white"
@@ -42,10 +71,13 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Col 2: Follow us + contact + social icons */}
-          <div className="flex flex-col items-start md:items-center tracking-tighter">
+          <motion.div
+            variants={fadeUp}
+            className="flex flex-col items-start md:items-center tracking-tighter"
+          >
             <h4 className="mb-4 text-sm font-medium text-white">Follow us</h4>
             <a
               href="mailto:hello@equivest.com"
@@ -67,7 +99,7 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="group flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] transition-colors duration-200 hover:border-white/20"
+                  className="group flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] transition-[border-color,transform] duration-200 ease-out hover:border-white/20 active:scale-[0.95]"
                 >
                   <Image
                     src={social.src}
@@ -79,10 +111,13 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Col 3: Address */}
-          <div className="md:text-right tracking-tighter">
+          <motion.div
+            variants={fadeUp}
+            className="md:text-right tracking-tighter"
+          >
             <h4 className="mb-4 text-sm font-medium text-white">Address</h4>
             <p className="text-sm leading-relaxed text-[#A0AEC0]/70">
               Equivest Ltd
@@ -91,11 +126,17 @@ export default function Footer() {
               <br />
               Cyprus.
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Row 2: Copyright | Terms | Privacy */}
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/[0.06] py-6 sm:flex-row sm:items-center sm:justify-between">
+        {/* Row 2: Copyright | Forged By */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease, delay: 0.3 }}
+          className="mt-14 flex flex-col gap-3 border-t border-white/[0.06] py-6 sm:flex-row sm:items-center sm:justify-between"
+        >
           <p className="text-xs text-[#A0AEC0]/40">
             &copy; {new Date().getFullYear()} Equivest. All Rights Reserved.
           </p>
@@ -114,10 +155,16 @@ export default function Footer() {
               className="inline-block h-auto w-16 object-contain ml-2"
             />
           </Link>
-        </div>
+        </motion.div>
 
-        {/* Row 3: Giant logo */}
-        <div className="relative mt-8 h-20 w-full sm:h-28 md:h-36 lg:h-60">
+        {/* Row 3: Giant logo — clip-path reveal from bottom */}
+        <motion.div
+          initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
+          whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1], delay: 0.15 }}
+          className="relative mt-8 h-20 w-full sm:h-28 md:h-36 lg:h-60"
+        >
           <Image
             src="/assets/images/light-logo.png"
             alt="Equivest"
@@ -126,7 +173,7 @@ export default function Footer() {
             className="object-contain opacity-20"
             priority
           />
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
