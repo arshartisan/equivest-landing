@@ -14,7 +14,9 @@
       "Bash(gh api:*)",
       "Bash(gh search:*)",
       "Bash(gh --version)",
-      "WebFetch(domain:api.github.com)"
+      "WebFetch(domain:api.github.com)",
+      "Bash(xargs grep:*)",
+      "Bash(node:*)"
     ]
   }
 }
