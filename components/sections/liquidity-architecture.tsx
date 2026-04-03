@@ -148,7 +148,7 @@ function FlowConnector() {
 function MobileFlowConnector() {
   return (
     <svg
-      className="mx-auto block w-px md:hidden"
+      className="ml-[23px] block w-px md:hidden"
       viewBox="0 0 2 40"
       preserveAspectRatio="xMidYMid meet"
       aria-hidden="true"
@@ -169,7 +169,7 @@ function MobileFlowConnector() {
 
 export default function LiquidityArchitectureSection() {
   return (
-    <section className="border-t border-border bg-background px-6 py-24 md:py-32">
+    <section id="liquidity" className="border-t border-border bg-background px-6 py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
         {/* Section header */}
         <div className="mb-16 flex flex-col gap-6 md:mb-20 md:flex-row md:items-center md:gap-20">
@@ -183,13 +183,13 @@ export default function LiquidityArchitectureSection() {
             Liquidity Architecture
           </motion.span> */}
 
-          <div className="flex flex-col gap-4 text-center mx-auto">
+          <div className="flex flex-col gap-4 text-left md:text-center md:mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease }}
-              className="text-[clamp(2.5rem,3vw,3.5rem)] font-medium leading-[1.15] tracking-tighter text-foreground"
+              className="text-3xl md:text-[clamp(2.5rem,3vw,3.5rem)] font-medium leading-[1.15] tracking-tighter text-foreground"
             >
               Unified Pricing{" "}
               <span className="text-gold">Environment</span>
@@ -199,7 +199,7 @@ export default function LiquidityArchitectureSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1, ease }}
-              className="max-w-xl text-base leading-relaxed tracking-tighter text-muted-foreground"
+              className="max-w-xl text-sm md:text-base leading-relaxed tracking-tighter text-muted-foreground"
             >
               Equivest aggregates liquidity from multiple institutional providers
               into a unified pricing environment, ensuring optimal execution and
@@ -209,7 +209,7 @@ export default function LiquidityArchitectureSection() {
         </div>
 
         {/* Architecture nodes — desktop: row, mobile: column */}
-        <div className="grid grid-cols-1 gap-0 md:grid-cols-5 md:gap-0">
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-5 md:gap-0">
           {nodes.map((node, i) => (
             <div key={i} className="flex flex-col items-start">
               <motion.div
@@ -217,7 +217,7 @@ export default function LiquidityArchitectureSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: 0.1 * i, ease }}
-                className="group flex w-full flex-col items-center px-3 tracking-tighter text-center"
+                className="group flex w-full flex-col items-start md:items-center px-3 tracking-tighter text-left md:text-center"
               >
                 {/* Icon container */}
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-card/60">
@@ -228,13 +228,13 @@ export default function LiquidityArchitectureSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="mb-2 text-sm font-medium leading-snug text-foreground">
+                <h3 className="mb-2 text-base md:text-sm font-medium leading-snug text-foreground">
                   {node.title}{" "}
                   <span className="text-primary hover:text-gold">{node.titleAccent}</span>
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs leading-relaxed text-muted-foreground">
+                <p className="text-sm md:text-xs leading-relaxed text-muted-foreground">
                   {node.description}
                 </p>
               </motion.div>
@@ -254,7 +254,7 @@ export default function LiquidityArchitectureSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 1.2, ease }}
-          className="mt-6 text-center text-base tracking-tighter text-muted-foreground/50"
+          className="mt-6 text-left md:text-center text-sm md:text-base tracking-tighter text-muted-foreground/50"
         >
           Continuous aggregation and optimisation across all liquidity tiers
         </motion.p>

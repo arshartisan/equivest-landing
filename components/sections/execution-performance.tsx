@@ -56,16 +56,16 @@ const cardVariants = {
 
 export default function ExecutionPerformanceSection() {
   return (
-    <section className="border-t border-border bg-section px-6 py-24 md:py-32">
+    <section id="execution" className="border-t border-border bg-section px-6 py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
         {/* Section header */}
-        <div className="mb-16 flex flex-col gap-4 text-center mx-auto md:mb-20">
+        <div className="mb-16 flex flex-col gap-4 text-left md:text-center md:mx-auto md:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease }}
-            className="text-[clamp(3.5rem,3vw,3.5rem)] font-medium leading-[1.15] tracking-tighter text-foreground"
+            className="text-3xl md:text-[clamp(3.5rem,3vw,3.5rem)] font-medium leading-[1.15] tracking-tighter text-foreground"
           >
             Execution{" "}
             <span className="text-gold">Performance</span>
@@ -75,7 +75,7 @@ export default function ExecutionPerformanceSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1, ease }}
-            className="mx-auto max-w-xl text-lg leading-relaxed tracking-tighter text-muted-foreground"
+            className="md:mx-auto max-w-xl text-sm md:text-lg leading-relaxed tracking-tighter text-muted-foreground"
           >
             Infrastructure engineered for speed, reliability, and
             cost-efficiency - every metric optimised for institutional demands.
@@ -92,7 +92,7 @@ export default function ExecutionPerformanceSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
-              className={`group relative flex aspect-3/4 cursor-pointer flex-col overflow-hidden rounded-3xl ${metric.bg} p-6`}
+              className={`group relative flex aspect-square md:aspect-3/4 cursor-pointer flex-col overflow-hidden rounded-3xl ${metric.bg} p-6`}
             >
               {/* Icon — top left */}
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black/15">

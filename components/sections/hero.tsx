@@ -70,7 +70,7 @@ export default function HeroSection() {
             }}
             className="mt-8"
           >
-            <CTA text="Request Access" />
+            <CTA text="Request Access" mobile />
           </motion.div>
         </motion.div>
       </div>

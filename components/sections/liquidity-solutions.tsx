@@ -57,7 +57,7 @@ export default function LiquiditySolutionsSection() {
         </div>
 
         {/* Asset list rows */}
-        <div className="border-t border-border grid grid-cols-2">
+        <div className="border-t border-border grid md:grid-cols-2">
           {assetClasses.map((asset, i) => (
             <motion.div
               key={asset.name}
@@ -68,24 +68,24 @@ export default function LiquiditySolutionsSection() {
               className="group relative border-b border-border"
             >
               {/* Hover fill background */}
-              <div className="absolute inset-0 origin-left scale-x-0 bg-foreground transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-x-100" />
+              <div className="absolute inset-0 origin-left scale-x-0 bg-foreground transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-x-100 rounded-full" />
 
               {/* Row content */}
-              <div className="relative flex items-center gap-6 px-2 py-5 md:gap-10 md:px-4 md:py-6">
+              <div className="relative flex items-center gap-6 px-2 py-4 md:gap-10 md:px-4 md:py-6">
                 {/* Number */}
                 <span className="w-8 shrink-0 text-sm font-medium tabular-nums text-muted-foreground transition-colors duration-300 group-hover:text-background/60 md:w-10">
                   {asset.number}
                 </span>
 
                 {/* Name */}
-                <h3 className="text-lg font-semibold tracking-tight text-foreground transition-colors duration-300 group-hover:text-background md:text-3xl">
+                <h3 className="text-lg font-semibold tracking-tight text-foreground transition-colors duration-300 group-hover:text-gold md:text-3xl">
                   {asset.name}
                 </h3>
 
                 {/* Arrow — right aligned */}
-                <div className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-gold group-hover:bg-gold">
+                <div className="ml-auto flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-gold group-hover:bg-gold">
                   <ArrowUpRight
-                    className="h-4 w-4 text-muted-foreground transition-all duration-300 group-hover:rotate-45 group-hover:text-foreground"
+                    className="h-8 w-8 text-muted-foreground transition-all duration-300 group-hover:rotate-45 group-hover:text-foreground"
                     strokeWidth={2}
                   />
                 </div>

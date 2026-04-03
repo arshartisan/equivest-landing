@@ -15,7 +15,7 @@ const HIGHLIGHT_WORDS = [
 
 export default function RegulationSection() {
   return (
-    <section className="border-t border-border bg-section px-6 py-24 md:py-32 min-h-screen">
+    <section id="regulation" className="border-t border-border bg-section px-6 py-24 md:py-32 md:min-h-screen">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-10 md:flex-row md:items-start justify-center md:gap-20">
           {/* Left label */}
