@@ -43,7 +43,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="shrink-0">
-          <CTA text="Request Access" />
+          <CTA text="Contact Us" />
         </div>
       </nav>
     </header>

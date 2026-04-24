@@ -38,7 +38,7 @@ const fadeUp = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B0F14] px-6 pb-0 overflow-hidden">
+    <footer className="bg-[#0B0F14] px-6 pb-24 overflow-hidden">
       <div className="mx-auto max-w-7xl border-t border-white/[0.06]" />
 
       <div className="mx-auto max-w-7xl pt-14 md:pt-20">
@@ -116,63 +116,28 @@ export default function Footer() {
           {/* Col 3: Address */}
           <motion.div
             variants={fadeUp}
-            className="md:text-right tracking-tighter"
+            className="flex flex-col md:items-end justify-between tracking-tighter"
           >
-            <h4 className="mb-4 text-sm font-medium text-white">Address</h4>
-            <p className="text-sm leading-relaxed text-[#A0AEC0]/70">
-              Equivest Ltd
-              <br />
-              Limassol,
-              <br />
-              Cyprus.
-            </p>
-          </motion.div>
-        </motion.div>
-
-        {/* Row 2: Copyright | Forged By */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease, delay: 0.3 }}
-          className="mt-14 flex flex-col gap-3 border-t border-white/[0.06] py-6 sm:flex-row sm:items-center sm:justify-between"
-        >
-          <p className="text-xs text-[#A0AEC0]/40">
-            &copy; {new Date().getFullYear()} Equivest. All Rights Reserved.
-          </p>
-
-          <Link
-            href="https://www.focaldive.io/"
-            target="_blank"
-            className="text-[0.625rem] uppercase tracking-widest text-[#A0AEC0]/40 transition-colors duration-200 hover:text-white"
-          >
-            Forged By
+            <div>
+              <h4 className="mb-4 text-sm font-medium text-white">Address</h4>
+              <p className="text-sm leading-relaxed text-[#A0AEC0]/70 md:text-right">
+                Equivest Ltd
+                <br />
+                Limassol,
+                <br />
+                Cyprus.
+              </p>
+            </div>
             <Image
-              src="/assets/images/fd.svg"
-              alt="Forge"
-              width={80}
-              height={20}
-              className="inline-block h-auto w-16 object-contain ml-2"
+              src="/assets/images/light-logo.png"
+              alt="Equivest"
+              width={120}
+              height={32}
+              className="mt-8 h-8 w-auto object-contain opacity-60"
+              priority
             />
-          </Link>
-        </motion.div>
+          </motion.div>
 
-        {/* Row 3: Giant logo — clip-path reveal from bottom */}
-        <motion.div
-          initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
-          whileInView={{ opacity: 1, clipPath: "inset(0% 0 0 0)" }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.8, ease: [0.77, 0, 0.175, 1], delay: 0.15 }}
-          className="relative mt-8 h-20 w-full sm:h-28 md:h-36 lg:h-60"
-        >
-          <Image
-            src="/assets/images/light-logo.png"
-            alt="Equivest"
-            fill
-            sizes="100vw"
-            className="object-contain opacity-20"
-            priority
-          />
         </motion.div>
       </div>
     </footer>
