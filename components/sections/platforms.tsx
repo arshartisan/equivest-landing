@@ -136,7 +136,7 @@ export default function PlatformsSection() {
               alt={PLATFORMS[0].name}
               width={250}
               height={60}
-              className="relative z-10 h-12 w-auto max-w-[200px] object-contain brightness-0 invert opacity-70 transition-opacity duration-200 ease-out group-hover:opacity-100 md:h-14"
+              className="relative z-10 h-12 w-auto max-w-[200px] object-contain transition-opacity duration-200 ease-out group-hover:opacity-100 md:h-14"
             />
           </motion.div>
 
@@ -153,7 +153,7 @@ export default function PlatformsSection() {
               alt={PLATFORMS[1].name}
               width={160}
               height={60}
-              className="relative z-10 h-10 w-auto max-w-[200px] object-contain brightness-0 invert opacity-70 transition-opacity duration-200 ease-out group-hover:opacity-100 md:h-12"
+              className="relative z-10 h-10 w-auto max-w-[200px] object-contain transition-opacity duration-200 ease-out group-hover:opacity-100 md:h-12"
             />
           </motion.div>
 
@@ -170,7 +170,7 @@ export default function PlatformsSection() {
               alt={PLATFORMS[2].name}
               width={160}
               height={60}
-              className="relative z-10 h-10 w-auto max-w-[220px] object-contain brightness-0 invert opacity-70 transition-opacity duration-200 ease-out group-hover:opacity-100 md:h-12"
+              className="relative z-10 h-10 w-auto max-w-[220px] object-contain transition-opacity duration-200 ease-out group-hover:opacity-100 md:h-12"
             />
           </motion.div>
 
@@ -187,7 +187,7 @@ export default function PlatformsSection() {
               alt={PLATFORMS[3].name}
               width={250}
               height={60}
-              className="relative z-10 h-12 w-auto max-w-[220px] object-contain brightness-0 invert opacity-70 transition-opacity duration-200 ease-out group-hover:opacity-100 md:h-14"
+              className="relative z-10 h-12 w-auto max-w-[220px] object-contain transition-opacity duration-200 ease-out group-hover:opacity-100 md:h-14"
             />
           </motion.div>
 

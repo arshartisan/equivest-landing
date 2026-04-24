@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section className="relative h-full overflow-hidden bg-white">
       {/* Content — overlays the video */}
-      <div className="absolute inset-x-0 top-0 z-10 flex min-h-screen items-center justify-center px-6 text-center">
+      <div className="absolute inset-x-0 top-0 z-10 flex min-h-screen items-start pt-36 justify-center px-6 text-center">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -70,7 +70,7 @@ export default function HeroSection() {
             }}
             className="mt-8"
           >
-            <CTA text="Request Access" mobile />
+            <CTA text="Contact Us" mobile />
           </motion.div>
         </motion.div>
       </div>
@@ -90,7 +90,7 @@ export default function HeroSection() {
           className="w-full object-contain"
           poster="/assets/videos/123.gif"
         >
-          <source src="/assets/videos/123.webm" type="video/webm" />
+          <source src="/assets/videos/32.webm" type="video/webm" />
           {/* GIF fallback rendered via poster */}
         </video>
       </motion.div>

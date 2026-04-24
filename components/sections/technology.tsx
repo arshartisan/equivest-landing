@@ -82,7 +82,7 @@ export default function TechnologySection() {
                   alt={partner.name}
                   width={160}
                   height={48}
-                  className="h-7 w-auto max-w-[120px] object-contain brightness-0 invert opacity-50 transition-opacity duration-200 ease-out group-hover:opacity-90 md:h-9 md:max-w-[150px]"
+                  className="h-7 w-auto max-w-[120px] object-contain transition-opacity duration-200 ease-out group-hover:opacity-90 md:h-9 md:max-w-[150px]"
                 />
               </motion.div>
             ))}

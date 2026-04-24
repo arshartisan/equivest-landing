@@ -75,7 +75,7 @@ export default function FinalCtaSection() {
               }}
               className="mt-7"
             >
-              <CTA text={"Request Access"} />
+              <CTA text={"Contact Us"} />
             </motion.div>
           </motion.div>
         </div>

@@ -2,16 +2,17 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 const assetClasses = [
-  { number: "01", name: "Forex" },
-  { number: "02", name: "Metals" },
-  { number: "03", name: "Indices" },
-  { number: "04", name: "Commodities" },
-  { number: "05", name: "Equities" },
-  { number: "06", name: "Derivatives" },
+  { number: "01", name: "Forex", icon: "/assets/icons/forex.png" },
+  { number: "02", name: "Metals", icon: "/assets/icons/metal.png" },
+  { number: "03", name: "Indices", icon: "/assets/icons/indices.png" },
+  { number: "04", name: "Commodities", icon: "/assets/icons/commodity.png" },
+  { number: "05", name: "Equities", icon: "/assets/icons/equity.png" },
+  { number: "06", name: "Derivatives", icon: "/assets/icons/derivatives.png" },
 ];
 
 export default function LiquiditySolutionsSection() {
@@ -82,11 +83,18 @@ export default function LiquiditySolutionsSection() {
                   {asset.name}
                 </h3>
 
-                {/* Arrow — right aligned */}
-                <div className="ml-auto flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-gold group-hover:bg-gold">
+                {/* Arrow / asset icon — right aligned */}
+                <div className="relative ml-auto flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-gold group-hover:bg-gold">
                   <ArrowUpRight
-                    className="h-8 w-8 text-muted-foreground transition-all duration-300 group-hover:rotate-45 group-hover:text-foreground"
+                    className="h-8 w-8 text-muted-foreground transition-all duration-300 group-hover:scale-50 group-hover:opacity-0"
                     strokeWidth={2}
+                  />
+                  <Image
+                    src={asset.icon}
+                    alt={`${asset.name} icon`}
+                    width={32}
+                    height={32}
+                    className="absolute h-8 w-8 scale-50 object-contain opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100"
                   />
                 </div>
               </div>

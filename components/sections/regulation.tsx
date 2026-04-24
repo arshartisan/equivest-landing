@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import BlurText from "@/components/ui/blur-text";
+import CTA from "../CTA";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
@@ -30,16 +31,19 @@ export default function RegulationSection() {
           </motion.span>
 
           {/* Right statement with blur-in animation */}
-          <BlurText
-            text="Licensed by the Financial Services Commission (Mauritius) as an Investment Dealer (Full Service Dealer, excluding underwriting), operating under a Global Business Licence"
-            renderAs="h2"
-            className="text-[clamp(1.75rem,4vw,3.25rem)] font-medium leading-[1.15] tracking-tighter text-foreground"
-            animateBy="words"
-            delay={50}
-            direction="bottom"
-            stepDuration={0.4}
-            highlightWords={HIGHLIGHT_WORDS}
-          />
+          <div className="space-y-6">
+            <BlurText
+              text="Licensed by the Financial Services Commission (Mauritius) as an Investment Dealer (Full Service Dealer, excluding underwriting), operating under a Global Business Licence"
+              renderAs="h2"
+              className="text-[clamp(1.75rem,4vw,3.25rem)] font-medium leading-[1.15] tracking-tighter text-foreground"
+              animateBy="words"
+              delay={50}
+              direction="bottom"
+              stepDuration={0.4}
+              highlightWords={HIGHLIGHT_WORDS}
+            />
+            <CTA text={"View Information"} />
+          </div>
         </div>
       </div>
     </section>
