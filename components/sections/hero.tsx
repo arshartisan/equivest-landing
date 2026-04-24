@@ -8,9 +8,9 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 export default function HeroSection() {
   return (
-    <section className="relative h-full overflow-hidden bg-white">
-      {/* Content — overlays the video */}
-      <div className="absolute inset-x-0 top-0 z-10 flex min-h-screen items-start pt-36 justify-center px-6 text-center">
+    <section className="relative overflow-hidden bg-white pt-32 md:pt-36">
+      {/* Content */}
+      <div className="relative z-10 flex justify-center px-6 text-center">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -23,7 +23,7 @@ export default function HeroSection() {
           {/* Headline */}
           <div className="flex flex-col items-center">
             <BlurText
-              text="INSTITUTIONAL LIQUIDITY."
+              text="INSTITUTIONAL LIQUIDITY"
               renderAs="h1"
               className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-[#0B0F14] md:text-6xl justify-center"
               animateBy="words"
@@ -32,7 +32,7 @@ export default function HeroSection() {
               stepDuration={0.4}
             />
             <BlurText
-              text="AGGREGATED. "
+              text="AGGREGATED "
               renderAs="h1"
               className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-[#0B0F14] md:text-6xl justify-center"
               animateBy="words"
@@ -41,7 +41,7 @@ export default function HeroSection() {
               stepDuration={0.4}
             />
             <BlurText
-              text="DELIVERED."
+              text="DELIVERED"
               renderAs="h1"
               className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-[#0B0F14] md:text-6xl justify-center"
               animateBy="words"
@@ -75,12 +75,12 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Video — flows normally, determines section height */}
+      {/* Video — flows naturally below content */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease, delay: 0.5 }}
-        className="flex min-h-screen items-end justify-center"
+        className="-mt-40 flex justify-center md:-mt-[40rem]"
       >
         <video
           autoPlay
@@ -90,7 +90,7 @@ export default function HeroSection() {
           className="w-full object-contain"
           poster="/assets/videos/123.gif"
         >
-          <source src="/assets/videos/32.webm" type="video/webm" />
+          <source src="/assets/videos/123.webm" type="video/webm" />
           {/* GIF fallback rendered via poster */}
         </video>
       </motion.div>

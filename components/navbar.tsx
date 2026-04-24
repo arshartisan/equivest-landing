@@ -42,8 +42,8 @@ export default function Navbar() {
         </Link>
 
         {/* CTA */}
-        <div className="shrink-0">
-          <CTA text="Contact Us" />
+        <div className="mr-1.5">
+          <CTA text="Contact Us" compact />
         </div>
       </nav>
     </header>

@@ -1,4 +1,4 @@
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/hero";
 import RegulationSection from "@/components/sections/regulation";
 import LiquidityArchitectureSection from "@/components/sections/liquidity-architecture";

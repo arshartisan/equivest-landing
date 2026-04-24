@@ -86,7 +86,7 @@ export default function LiquiditySolutionsSection() {
                 {/* Arrow / asset icon — right aligned */}
                 <div className="relative ml-auto flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-gold group-hover:bg-gold">
                   <ArrowUpRight
-                    className="h-8 w-8 text-muted-foreground transition-all duration-300 group-hover:scale-50 group-hover:opacity-0"
+                    className="hidden h-8 w-8 text-muted-foreground transition-all duration-300 md:block md:group-hover:scale-50 md:group-hover:opacity-0"
                     strokeWidth={2}
                   />
                   <Image
@@ -94,7 +94,7 @@ export default function LiquiditySolutionsSection() {
                     alt={`${asset.name} icon`}
                     width={32}
                     height={32}
-                    className="absolute h-8 w-8 scale-50 object-contain opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100"
+                    className="h-8 w-8 object-contain invert transition-all duration-300 md:absolute md:scale-50 md:opacity-0 md:group-hover:scale-100 md:group-hover:opacity-100"
                   />
                 </div>
               </div>
