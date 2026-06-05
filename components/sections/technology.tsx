@@ -6,10 +6,10 @@ import Image from "next/image";
 const ease = [0.23, 1, 0.32, 1] as const;
 
 const PARTNERS = [
+  { name: "FXCubic", logo: "/assets/images/logos/fxcubic-logo.svg" },
   { name: "oneZero", logo: "/assets/images/logos/oz.webp" },
   { name: "YourBourse", logo: "/assets/images/logos/yourbourse_logo.svg" },
-  { name: "FXCubic", logo: "/assets/images/logos/fxcubic-logo.svg" },
-  { name: "Centroid", logo: "/assets/images/logos/centroid.svg" },
+  { name: "Centroid", logo: "/assets/images/logos/centroid2.svg" },
   { name: "PrimeXM", logo: "/assets/images/logos/primexm.svg" },
 ];
 

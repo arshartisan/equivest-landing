@@ -7,12 +7,12 @@ import Image from "next/image";
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 const assetClasses = [
-  { number: "01", name: "Forex", icon: "/assets/icons/forex.png" },
-  { number: "02", name: "Metals", icon: "/assets/icons/metal.png" },
-  { number: "03", name: "Indices", icon: "/assets/icons/indices.png" },
-  { number: "04", name: "Commodities", icon: "/assets/icons/commodity.png" },
-  { number: "05", name: "Equities", icon: "/assets/icons/equity.png" },
-  { number: "06", name: "Derivatives", icon: "/assets/icons/derivatives.png" },
+  { number: "01", name: "Forex", icon: "/assets/images/liquidity/forex.svg" },
+  { number: "02", name: "Metals", icon: "/assets/images/liquidity/metal.svg" },
+  { number: "03", name: "Indices", icon: "/assets/images/liquidity/indices.svg" },
+  { number: "04", name: "Commodities", icon: "/assets/images/liquidity/commodity.svg" },
+  { number: "05", name: "Equities", icon: "/assets/images/liquidity/equity.svg" },
+  { number: "06", name: "Derivatives", icon: "/assets/images/liquidity/derivatives.svg" },
 ];
 
 export default function LiquiditySolutionsSection() {
@@ -84,18 +84,38 @@ export default function LiquiditySolutionsSection() {
                 </h3>
 
                 {/* Arrow / asset icon — right aligned */}
-                <div className="relative ml-auto flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-gold group-hover:bg-gold">
-                  <ArrowUpRight
-                    className="hidden h-8 w-8 text-muted-foreground transition-all duration-300 md:block md:group-hover:scale-50 md:group-hover:opacity-0"
-                    strokeWidth={2}
-                  />
-                  <Image
-                    src={asset.icon}
-                    alt={`${asset.name} icon`}
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 object-contain invert transition-all duration-300 md:absolute md:scale-50 md:opacity-0 md:group-hover:scale-100 md:group-hover:opacity-100"
-                  />
+                <div className="relative ml-auto flex h-16 w-16 shrink-0 items-center justify-center md:h-20 md:w-20">
+                  {/* Default state: bordered circle with arrow */}
+                  <div className="absolute inset-0 flex items-center justify-center rounded-full border border-border transition-all duration-500 ease-out group-hover:scale-75 group-hover:opacity-0">
+                    <ArrowUpRight
+                      className="h-8 w-8 text-muted-foreground"
+                      strokeWidth={2}
+                    />
+                  </div>
+
+                  {/* Hover state: 3D icon with gentle float */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 scale-50 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-100">
+                    <motion.div
+                      animate={{
+                        y: [0, -4, 0],
+                        rotate: [-1.5, 1.5, -1.5],
+                      }}
+                      transition={{
+                        duration: 3.2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="drop-shadow-[0_10px_24px_rgba(56,189,248,0.35)]"
+                    >
+                      <Image
+                        src={asset.icon}
+                        alt={`${asset.name} icon`}
+                        width={80}
+                        height={80}
+                        className="h-16 w-16 object-contain md:h-20 md:w-20"
+                      />
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>

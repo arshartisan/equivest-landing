@@ -92,7 +92,7 @@ export default function ExecutionPerformanceSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
-              className={`group relative flex aspect-square md:aspect-3/4 cursor-pointer flex-col overflow-hidden rounded-3xl ${metric.bg} p-6`}
+              className={`group relative flex md:aspect-3/4 cursor-pointer flex-col overflow-hidden rounded-3xl ${metric.bg} p-6`}
             >
               {/* Icon — top left */}
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black/15">
@@ -102,10 +102,10 @@ export default function ExecutionPerformanceSection() {
                 />
               </div>
 
-              {/* Bottom content — slides up on hover to reveal description */}
-              <div className="mt-auto flex flex-col">
-                {/* Title block — slides up on hover */}
-                <div className="transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:-translate-y-2">
+              {/* Bottom content — always visible on mobile; slides up on hover on desktop */}
+              <div className="mt-8 flex flex-col md:mt-auto">
+                {/* Title block — slides up on hover (desktop only) */}
+                <div className="transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] md:group-hover:-translate-y-2">
                   <span className="mb-1.5 block text-xs font-medium text-gold">
                     {metric.number}
                   </span>
@@ -114,15 +114,13 @@ export default function ExecutionPerformanceSection() {
                   </h3>
                 </div>
 
-                {/* Description + divider — hidden by default, revealed on hover */}
-                <div className="grid grid-rows-[0fr] transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:grid-rows-[1fr]">
+                {/* Description + divider — visible by default on mobile, hover-revealed on desktop */}
+                <div className="grid grid-rows-[1fr] transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr]">
                   <div className="overflow-hidden">
-                    <div className="pt-">
-                      <div className="mb-3 h-px w-full bg-black/15" />
-                      <p className="text-base leading-relaxed text-gray-300 tracking-tighter">
-                        {metric.description}
-                      </p>
-                    </div>
+                    <div className="mb-3 mt-3 h-px w-full bg-black/15" />
+                    <p className="text-base leading-relaxed text-gray-300 tracking-tighter">
+                      {metric.description}
+                    </p>
                   </div>
                 </div>
               </div>
