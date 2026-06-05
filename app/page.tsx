@@ -5,6 +5,7 @@ import LiquidityArchitectureSection from "@/components/sections/liquidity-archit
 import ExecutionPerformanceSection from "@/components/sections/execution-performance";
 import LiquiditySolutionsSection from "@/components/sections/liquidity-solutions";
 import ExecutionModelSection from "@/components/sections/execution-model";
+import LiquidityPartnersSection from "@/components/sections/liquidity-partners";
 import TechnologySection from "@/components/sections/technology";
 import PlatformsSection from "@/components/sections/platforms";
 import WhyEquivestSection from "@/components/sections/why-equivest";
@@ -23,6 +24,7 @@ export default function Home() {
         <ExecutionPerformanceSection />
         <LiquiditySolutionsSection />
         <ExecutionModelSection />
+        <LiquidityPartnersSection />
         <TechnologySection />
         <PlatformsSection />
         <WhyEquivestSection />
