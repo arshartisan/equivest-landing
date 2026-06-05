@@ -24,7 +24,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="shrink-0 mx-4 relative h-8 w-[140px]">
           <Image
-            src="/assets/images/logo.png"
+            src="/assets/images/light-logo.png"
             alt="Equivest"
             width={140}
             height={32}
