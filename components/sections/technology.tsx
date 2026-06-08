@@ -11,6 +11,7 @@ const PARTNERS = [
   { name: "YourBourse", logo: "/assets/images/logos/yourbourse_logo.svg" },
   { name: "Centroid", logo: "/assets/images/logos/centroid2.svg" },
   { name: "PrimeXM", logo: "/assets/images/logos/primexm.svg" },
+  { name: "CBridge", logo: "/assets/images/logos/cbridge.svg" },
 ];
 
 const containerVariants = {
@@ -82,16 +83,10 @@ export default function TechnologySection() {
                   alt={partner.name}
                   width={160}
                   height={48}
-                  className="h-7 w-auto max-w-[120px] object-contain transition-opacity duration-200 ease-out group-hover:opacity-90 md:h-9 md:max-w-[150px]"
+                  className="h-7 w-auto max-w-[120px] object-contain grayscale opacity-70 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:grayscale-0 md:h-9 md:max-w-[150px]"
                 />
               </motion.div>
             ))}
-
-            {/* Empty cell to complete the 2×3 grid */}
-            <motion.div
-              variants={itemVariants}
-              className="hidden sm:flex items-center justify-center border-b border-r border-border/50 px-6 py-12 md:py-16"
-            />
           </motion.div>
         </div>
       </div>

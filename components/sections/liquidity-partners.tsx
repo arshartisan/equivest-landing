@@ -9,10 +9,9 @@ const ease = [0.23, 1, 0.32, 1] as const;
 const PARTNERS = [
   { name: "LMAX", logo: "/assets/images/partners/lmax.png" },
   { name: "Finalto", logo: "/assets/images/partners/finalto.png" },
-  { name: "ISAM", logo: "/assets/images/partners/isam.jpg" },
+  { name: "ISAM", logo: "/assets/images/partners/isam2.png" },
   { name: "GBE", logo: "/assets/images/partners/gbe.svg" },
-  { name: "26 Degrees", logo: "/assets/images/partners/26_degress.jpeg" },
-  { name: "CBridge", logo: "/assets/images/partners/cbridge.svg" },
+  { name: "26 Degrees", logo: "/assets/images/partners/26.avif" },
 ];
 
 const PILLARS = [
@@ -136,7 +135,7 @@ export default function LiquidityPartnersSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-6 grid grid-cols-2 border-l border-t border-border/70 md:grid-cols-3 lg:grid-cols-4"
+          className="mt-6 grid grid-cols-2 border-l border-t border-border/70 md:grid-cols-3 lg:grid-cols-3"
         >
           {PARTNERS.map((partner) => (
             <motion.div
@@ -149,7 +148,7 @@ export default function LiquidityPartnersSection() {
                 alt={partner.name}
                 width={180}
                 height={56}
-                className="h-8 w-auto max-w-[140px] object-contain opacity-75 transition-all duration-300 ease-out group-hover:opacity-100 md:h-10 md:max-w-[160px]"
+                className="h-8 w-auto max-w-[140px] object-contain brightness-0 invert opacity-75 transition-all duration-300 ease-out group-hover:opacity-100 md:h-10 md:max-w-[160px]"
               />
             </motion.div>
           ))}
