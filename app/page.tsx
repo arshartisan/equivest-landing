@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/hero";
 import RegulationSection from "@/components/sections/regulation";
 import LiquidityArchitectureSection from "@/components/sections/liquidity-architecture";
-import ExecutionPerformanceSection from "@/components/sections/execution-performance";
 import LiquiditySolutionsSection from "@/components/sections/liquidity-solutions";
 import ExecutionModelSection from "@/components/sections/execution-model";
 import LiquidityPartnersSection from "@/components/sections/liquidity-partners";
@@ -21,7 +20,6 @@ export default function Home() {
         <HeroSection />
         <RegulationSection />
         <LiquidityArchitectureSection />
-        <ExecutionPerformanceSection />
         <LiquiditySolutionsSection />
         <ExecutionModelSection />
         <LiquidityPartnersSection />

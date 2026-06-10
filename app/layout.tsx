@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Equivest | Prime-of-Prime Institutional Liquidity Provider",
+  title: "Equivest | Institutional Liquidity Aggregator | Mauritius FSC",
   description:
-    "Equivest is a Mauritius FSC-regulated Investment Dealer providing Prime-of-Prime liquidity, execution, and multi-asset market access.",
+    "Equivest is a Mauritius FSC-regulated Investment Dealer that aggregates institutional liquidity from multiple providers, delivering execution and multi-asset market access.",
 };
 
 export default function RootLayout({

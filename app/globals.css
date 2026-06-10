@@ -59,11 +59,10 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-
 }
 
 /*
- * Equivest — Dark institutional theme (always dark)
+ * Equivest - Dark institutional theme (always dark)
  * Background:      #0B0F14
  * Section:         #111827
  * Primary Accent:  #2F80ED (Blue)
@@ -72,47 +71,47 @@
  * Secondary Text:  #A0AEC0
  */
 :root {
-  --background: #0B0F14;
-  --foreground: #FFFFFF;
+  --background: #0b0f14;
+  --foreground: #ffffff;
   --card: #111827;
-  --card-foreground: #FFFFFF;
+  --card-foreground: #ffffff;
   --popover: #111827;
-  --popover-foreground: #FFFFFF;
-  --primary: #2F80ED;
-  --primary-foreground: #FFFFFF;
+  --popover-foreground: #ffffff;
+  --primary: #2f80ed;
+  --primary-foreground: #ffffff;
   --secondary: #111827;
-  --secondary-foreground: #A0AEC0;
+  --secondary-foreground: #a0aec0;
   --muted: #111827;
-  --muted-foreground: #A0AEC0;
-  --accent: #2F80ED;
-  --accent-foreground: #FFFFFF;
-  --destructive: #EF4444;
+  --muted-foreground: #a0aec0;
+  --accent: #2f80ed;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.1);
-  --ring: #2F80ED;
+  --ring: #2f80ed;
 
   /* Equivest custom */
-  --gold: #C8A96A;
+  --gold: #c8a96a;
   --section: #111827;
 
   /* Charts */
-  --chart-1: #2F80ED;
-  --chart-2: #C8A96A;
-  --chart-3: #A0AEC0;
-  --chart-4: #1A56A8;
-  --chart-5: #FFFFFF;
+  --chart-1: #2f80ed;
+  --chart-2: #c8a96a;
+  --chart-3: #a0aec0;
+  --chart-4: #1a56a8;
+  --chart-5: #ffffff;
 
   --radius: 0.5rem;
 
   /* Sidebar */
-  --sidebar: #0B0F14;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #2F80ED;
-  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar: #0b0f14;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #2f80ed;
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #111827;
-  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #2F80ED;
+  --sidebar-ring: #2f80ed;
 }
 
 @layer base {
@@ -135,5 +134,24 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* C4 - Visible keyboard focus outlines.
+   Only show on keyboard navigation (:focus-visible), not mouse clicks. */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* C5 - Respect the OS "reduce motion" accessibility setting. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
