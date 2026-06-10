@@ -43,7 +43,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="mr-1.5">
-          <CTA text="Contact Us" compact />
+          <CTA text="Institutional Access" compact />
         </div>
       </nav>
     </header>
