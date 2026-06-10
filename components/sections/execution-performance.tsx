@@ -94,7 +94,7 @@ export default function ExecutionPerformanceSection() {
               viewport={{ once: true, margin: "-60px" }}
               className={`group relative flex md:aspect-3/4 cursor-pointer flex-col overflow-hidden rounded-3xl ${metric.bg} p-6`}
             >
-              {/* Icon — top left */}
+              {/* Icon - top left */}
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black/15">
                 <metric.icon
                   className="h-6 w-6 text-gold"
@@ -102,9 +102,9 @@ export default function ExecutionPerformanceSection() {
                 />
               </div>
 
-              {/* Bottom content — always visible on mobile; slides up on hover on desktop */}
+              {/* Bottom content - always visible on mobile; slides up on hover on desktop */}
               <div className="mt-8 flex flex-col md:mt-auto">
-                {/* Title block — slides up on hover (desktop only) */}
+                {/* Title block - slides up on hover (desktop only) */}
                 <div className="transition-transform duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] md:group-hover:-translate-y-2">
                   <span className="mb-1.5 block text-xs font-medium text-gold">
                     {metric.number}
@@ -114,7 +114,7 @@ export default function ExecutionPerformanceSection() {
                   </h3>
                 </div>
 
-                {/* Description + divider — visible by default on mobile, hover-revealed on desktop */}
+                {/* Description + divider - visible by default on mobile, hover-revealed on desktop */}
                 <div className="grid grid-rows-[1fr] transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr]">
                   <div className="overflow-hidden">
                     <div className="mb-3 mt-3 h-px w-full bg-black/15" />

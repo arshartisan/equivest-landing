@@ -60,7 +60,7 @@ export default function PlatformsSection() {
   return (
     <section id="platforms" className="border-t border-border bg-section px-6 py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
-        {/* Top row — label + title left, description right */}
+        {/* Top row - label + title left, description right */}
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <motion.span
@@ -93,13 +93,13 @@ export default function PlatformsSection() {
             transition={{ duration: 0.6, delay: 0.1, ease }}
             className="max-w-sm text-sm leading-relaxed text-muted-foreground md:text-base tracking-tighter"
           >
-            Equivest provides seamless access to the world&apos;s most trusted
+            Equivest provides reliable access to the world&apos;s most trusted
             trading platforms, giving traders the flexibility to choose their
             preferred environment.
           </motion.p>
         </div>
 
-        {/* Bento grid — 3 cols x 3 rows on md+, single column on mobile */}
+        {/* Bento grid - 3 cols x 3 rows on md+, single column on mobile */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -117,17 +117,17 @@ export default function PlatformsSection() {
             </div>
 
             <div className="mt-8">
-              <p className="text-[clamp(2.5rem,5vw,3.5rem)] font-semibold leading-none tracking-tighter text-foreground">
-                5
+              <p className="text-xl font-medium leading-snug tracking-tighter text-foreground md:text-2xl">
+                Five supported platforms, extensible via FIX API
               </p>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground tracking-tighter">
-                Supported trading platforms with deep integration, ensuring
-                reliable execution and real-time connectivity.
+                Deep integration across each platform for reliable execution and
+                real-time connectivity.
               </p>
             </div>
           </motion.div>
 
-          {/* Row 1 / Col 2: Platform 1 — MetaTrader 5 (blue, large) */}
+          {/* Row 1 / Col 2: Platform 1 - MetaTrader 5 (blue, large) */}
           <motion.div
             variants={cardVariants}
             whileHover={{ scale: 1.02 }}
@@ -144,7 +144,7 @@ export default function PlatformsSection() {
             />
           </motion.div>
 
-          {/* Row 1 / Col 3: Platform 2 — cTrader (gold) */}
+          {/* Row 1 / Col 3: Platform 2 - cTrader (gold) */}
           <motion.div
             variants={cardVariants}
             whileHover={{ scale: 1.02 }}
@@ -161,7 +161,7 @@ export default function PlatformsSection() {
             />
           </motion.div>
 
-          {/* Row 2 / Col 1: Platform 3 — TradeLocker (gold) */}
+          {/* Row 2 / Col 1: Platform 3 - TradeLocker (gold) */}
           <motion.div
             variants={cardVariants}
             whileHover={{ scale: 1.02 }}
@@ -178,7 +178,7 @@ export default function PlatformsSection() {
             />
           </motion.div>
 
-          {/* Row 2 / Col 2: Platform 4 — Finova (blue, large) */}
+          {/* Row 2 / Col 2: Platform 4 - Finova (blue, large) */}
           <motion.div
             variants={cardVariants}
             whileHover={{ scale: 1.02 }}
@@ -195,7 +195,7 @@ export default function PlatformsSection() {
             />
           </motion.div>
 
-          {/* Row 2 / Col 3: Platform 5 — Match-Trader (gold) */}
+          {/* Row 2 / Col 3: Platform 5 - Match-Trader (gold) */}
           <motion.div
             variants={cardVariants}
             whileHover={{ scale: 1.02 }}
@@ -217,9 +217,9 @@ export default function PlatformsSection() {
             variants={cardVariants}
             className="flex flex-col items-start justify-between gap-6 rounded-2xl border border-border bg-background p-6 sm:col-span-2 md:col-span-3 md:flex-row md:items-center md:p-8"
           >
-            <p className="text-xl font-medium capitalize leading-snug tracking-tighter text-foreground md:text-2xl">
-              Powering seamless trading across{" "}
-              <span className="text-primary font-semibold">every platform.</span>
+            <p className="text-xl font-medium leading-snug tracking-tighter text-foreground md:text-2xl">
+              Connect through your preferred platform, or integrate directly via{" "}
+              <span className="font-medium text-primary">FIX API.</span>
             </p>
 
             <div className="w-full md:w-auto md:shrink-0">

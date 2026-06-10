@@ -39,7 +39,7 @@ export default function TechnologySection() {
     <section id="technology" className="border-t border-border bg-background px-6 py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_2fr] lg:gap-20">
-          {/* Left — text content */}
+          {/* Left - text content */}
           <div className="flex flex-col items-start gap-6">
             <motion.h2
               initial={{ opacity: 0, y: 16 }}
@@ -59,12 +59,12 @@ export default function TechnologySection() {
               transition={{ duration: 0.6, delay: 0.1, ease }}
               className="max-w-sm text-base leading-relaxed tracking-tighter text-muted-foreground "
             >
-              Equivest integrates with industry-standard bridge and aggregation technologies, ensuring
-              seamless execution and connectivity.
+              Equivest integrates with industry-standard bridge and aggregation
+              technologies for reliable execution and connectivity.
             </motion.p>
           </div>
 
-          {/* Right — logo grid */}
+          {/* Right - logo grid */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -78,12 +78,14 @@ export default function TechnologySection() {
                 variants={itemVariants}
                 className="group flex items-center justify-center border-b border-r border-border/80 px-6 py-12 md:py-16"
               >
+                {/* brightness-0 invert forces every logo to a uniform white,
+                    regardless of its source colour (checklist B14). */}
                 <Image
                   src={partner.logo}
                   alt={partner.name}
                   width={160}
                   height={48}
-                  className="h-7 w-auto max-w-[120px] object-contain grayscale opacity-70 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:grayscale-0 md:h-9 md:max-w-[150px]"
+                  className="h-7 w-auto max-w-[130px] object-contain opacity-70 brightness-0 invert transition-opacity duration-200 ease-out group-hover:opacity-100 md:h-8 md:max-w-[140px]"
                 />
               </motion.div>
             ))}

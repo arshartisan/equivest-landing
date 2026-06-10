@@ -59,10 +59,10 @@ function ReasonCard({ reason }: { reason: (typeof reasons)[number] }) {
       {/* Top inner highlight line */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      {/* Aurora glow — blue, bottom-center */}
+      {/* Aurora glow - blue, bottom-center */}
       <div className="pointer-events-none absolute -bottom-32 left-1/2 h-64 w-[120%] -translate-x-1/2 rounded-full bg-blue-500/40 blur-3xl transition-all duration-500 group-hover:bg-blue-500/55" />
 
-      {/* Aurora glow — blue, bottom-right */}
+      {/* Aurora glow - blue, bottom-right */}
       <div className="pointer-events-none absolute -bottom-24 -right-10 h-48 w-3/4 rounded-full bg-blue-500/30 blur-3xl" />
 
       {/* Bottom edge accent line */}
@@ -84,7 +84,7 @@ function ReasonCard({ reason }: { reason: (typeof reasons)[number] }) {
           {reason.description}
         </p>
       </div>
-{/* 
+      {/* 
       <div className="relative z-10">
         <a
           href="#"
@@ -133,7 +133,7 @@ export default function WhyEquivestSection() {
       className="relative border-t border-white/[0.06] bg-[#0B0F14]"
       style={{ height: "250vh" }}
     >
-      {/* Sticky container — pins to viewport while user scrolls */}
+      {/* Sticky container - pins to viewport while user scrolls */}
       <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
         {/* Header */}
         <div className="mx-auto w-full max-w-7xl px-6">

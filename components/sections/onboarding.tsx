@@ -16,6 +16,7 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 const steps = [
   {
     number: "01",
+    time: "Day 1",
     title: "Application & KYC",
     description:
       "Submit your application with required documentation. Our streamlined KYC process ensures fast verification while maintaining full regulatory compliance.",
@@ -24,6 +25,7 @@ const steps = [
   },
   {
     number: "02",
+    time: "Days 2-5",
     title: "Compliance Review",
     description:
       "Our compliance team conducts a thorough review of your application, assessing risk profiles and ensuring all regulatory requirements are met.",
@@ -32,6 +34,7 @@ const steps = [
   },
   {
     number: "03",
+    time: "Days 3-7",
     title: "Platform Setup",
     description:
       "Configure your trading environment with custom platform settings, user roles, and API integrations tailored to your operational needs.",
@@ -40,6 +43,7 @@ const steps = [
   },
   {
     number: "04",
+    time: "Days 5-10",
     title: "Liquidity Configuration",
     description:
       "Select and configure your liquidity feeds, pricing models, and risk parameters with guidance from our dealing desk specialists.",
@@ -48,6 +52,7 @@ const steps = [
   },
   {
     number: "05",
+    time: "Day 14+",
     title: "Go Live",
     description:
       "Launch your fully configured platform with ongoing support, real-time monitoring, and dedicated account management from day one.",
@@ -74,7 +79,7 @@ export default function OnboardingSection() {
             <p className="mb-3 text-xs font-medium uppercase tracking-widest text-primary">
               Onboarding Flow
             </p>
-            <h2 className="text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-semibold leading-[1.15] tracking-tighter text-white">
+            <h2 className="text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-medium leading-[1.15] tracking-tighter text-white">
               From application
               <br />
               to go-live
@@ -85,6 +90,17 @@ export default function OnboardingSection() {
             operational with minimal friction and maximum support.
           </p>
         </motion.div>
+
+        {/* Overall timeline summary */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, ease }}
+          className="mb-8 text-xs font-medium uppercase tracking-[0.16em] text-gold md:mb-10"
+        >
+          Typical time from application to go-live: 10-14 business days
+        </motion.p>
 
         {/* Mobile: vertical stack */}
         <div className="flex flex-col gap-3 md:hidden">
@@ -112,12 +128,17 @@ export default function OnboardingSection() {
                     />
                   </div>
                   <div className="flex-1">
-                    <span
-                      className="text-xs font-medium tracking-wider"
-                      style={{ color: step.color }}
-                    >
-                      {step.number}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span
+                        className="text-xs font-medium tracking-wider"
+                        style={{ color: step.color }}
+                      >
+                        {step.number}
+                      </span>
+                      <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-gold">
+                        {step.time}
+                      </span>
+                    </div>
                     <h3 className="text-sm font-medium tracking-tight text-white">
                       {step.title}
                     </h3>
@@ -170,7 +191,7 @@ export default function OnboardingSection() {
                   backgroundColor: isActive ? step.color : "#111827",
                 }}
               >
-                {/* Collapsed state — vertical text + icon */}
+                {/* Collapsed state - vertical text + icon */}
                 <div
                   className="absolute inset-0 flex flex-col items-center justify-between py-8"
                   style={{ visibility: isActive ? "hidden" : "visible" }}
@@ -198,7 +219,7 @@ export default function OnboardingSection() {
                   </div>
                 </div>
 
-                {/* Expanded state — full content */}
+                {/* Expanded state - full content */}
                 <div
                   className="absolute inset-0 flex flex-col justify-between p-8"
                   style={{ visibility: isActive ? "visible" : "hidden" }}
@@ -210,9 +231,22 @@ export default function OnboardingSection() {
                         strokeWidth={1.5}
                       />
                     </div>
-                    <span className="text-sm font-medium text-white/60">
-                      {step.number}
-                    </span>
+                    <div className="flex flex-col items-end gap-1">
+                      <span className="text-sm font-medium text-white/60">
+                        {step.number}
+                      </span>
+                      {/* Gold reads on the blue cards; switch to white on the
+                          gold-background cards for contrast. */}
+                      <span
+                        className="text-[10px] font-medium uppercase tracking-[0.14em]"
+                        style={{
+                          color:
+                            step.color === "#C8A96A" ? "#FFFFFF" : "#C8A96A",
+                        }}
+                      >
+                        {step.time}
+                      </span>
+                    </div>
                   </div>
 
                   <div>

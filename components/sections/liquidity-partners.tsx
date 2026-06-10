@@ -45,13 +45,13 @@ export default function LiquidityPartnersSection() {
   return (
     <section
       id="liquidity-partners"
-      className="border-t border-border bg-background px-6 py-24 md:py-32"
+      className="border-t border-border bg-section px-6 py-24 md:py-32"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Header — title left, contact link right */}
+        {/* Header - title left, contact link right */}
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <div className="max-w-3xl">
-            <motion.span
+            {/* <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -59,14 +59,14 @@ export default function LiquidityPartnersSection() {
               className="text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground"
             >
               Liquidity Partners
-            </motion.span>
+            </motion.span> */}
 
             <motion.h2
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.05, ease }}
-              className="mt-4 text-[clamp(2.25rem,5.5vw,4.5rem)] font-medium leading-[1.05] tracking-tighter text-foreground"
+              className="mt-4 text-[clamp(2.25rem,5.5vw,3.5rem)] font-medium leading-[1.05] tracking-tighter text-foreground"
             >
               Aggregating World-Class
               <br />
@@ -108,18 +108,17 @@ export default function LiquidityPartnersSection() {
             spreads, and fast, reliable trade execution.
           </p>
           <p className="text-sm leading-relaxed text-muted-foreground md:text-base tracking-tight">
-            Our advanced liquidity aggregation technology connects seamlessly
-            with top-tier financial institutions and liquidity partners,
-            creating a robust trading environment designed to support both
-            retail and institutional traders. By combining multiple liquidity
-            sources into a single pool, we help ensure greater market depth,
-            improved pricing, and enhanced trading conditions across global
-            markets.
+            Our advanced liquidity aggregation technology connects with top-tier
+            financial institutions and liquidity partners, creating a robust
+            trading environment built for institutional clients and professional
+            counterparties. By combining multiple liquidity sources into a single
+            pool, we help ensure greater market depth, improved pricing, and
+            enhanced trading conditions across global markets.
           </p>
         </motion.div>
 
         {/* Logo grid label */}
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -129,7 +128,6 @@ export default function LiquidityPartnersSection() {
           Our Trusted Liquidity Partners
         </motion.p>
 
-        {/* Partner logos grid — bordered cells */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -153,7 +151,6 @@ export default function LiquidityPartnersSection() {
             </motion.div>
           ))}
 
-          {/* Trailing cells to complete the grid on larger viewports */}
           <motion.div
             variants={itemVariants}
             className="hidden border-b border-r border-border/70 px-6 py-14 md:py-20 lg:flex lg:items-center lg:justify-center"
@@ -177,7 +174,7 @@ export default function LiquidityPartnersSection() {
               View more →
             </a>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Pillars / value props */}
         <motion.div

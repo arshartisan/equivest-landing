@@ -1,95 +1,51 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import BlurText from "@/components/ui/blur-text";
-import CTA from "../CTA";
+// import MarketGlobeClient from "@/components/MarketGlobe/MarketGlobeClient";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
-// height (% of pillar layer), opacity, accent flag (true = gold, false = blue)
-const PILLARS: { h: number; o: number; g: boolean }[] = [
-  { h: 38, o: 0.32, g: false },
-  { h: 55, o: 0.42, g: false },
-  { h: 68, o: 0.50, g: false },
-  { h: 52, o: 0.38, g: false },
-  { h: 74, o: 0.55, g: true },
-  { h: 82, o: 0.60, g: false },
-  { h: 64, o: 0.48, g: false },
-  { h: 92, o: 0.70, g: true },
-  { h: 88, o: 0.65, g: false },
-  { h: 100, o: 0.78, g: false },
-  { h: 86, o: 0.62, g: false },
-  { h: 96, o: 0.72, g: true },
-  { h: 78, o: 0.58, g: false },
-  { h: 66, o: 0.48, g: false },
-  { h: 58, o: 0.42, g: false },
-  { h: 50, o: 0.38, g: false },
-  { h: 44, o: 0.34, g: false },
-  { h: 36, o: 0.28, g: false },
+// Vertical light beams rising from the bottom, tinted with the Equivest
+// blue/gold accents (replaces the reference design's green).
+const BEAMS = [
+  { left: "6%", w: 70, h: "52%", from: "from-primary/25" },
+  { left: "19%", w: 95, h: "72%", from: "from-primary/20" },
+  { left: "33%", w: 60, h: "44%", from: "from-gold/15" },
+  { left: "49%", w: 120, h: "82%", from: "from-primary/30" },
+  { left: "64%", w: 64, h: "50%", from: "from-gold/15" },
+  { left: "79%", w: 95, h: "70%", from: "from-primary/20" },
+  { left: "92%", w: 70, h: "54%", from: "from-primary/25" },
+];
+
+const STATS = [
+  { value: "6", label: "Asset classes" },
+  { value: "5", label: "Trading platforms" },
 ];
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-svh flex-col overflow-hidden bg-[#05080C] pt-32 md:pt-36">
-      {/* Ambient backdrop wash */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute inset-x-0 bottom-0 h-[70%] bg-[radial-gradient(ellipse_at_bottom,rgba(47,128,237,0.18),transparent_70%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-[40%] bg-[radial-gradient(ellipse_at_bottom,rgba(200,169,106,0.10),transparent_75%)]" />
-      </div>
+    <section className="relative flex min-h-svh flex-col overflow-hidden bg-[#05080C]">
+      {/* ── Background: radial wash + vertical light beams ─────────────────── */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-x-0 bottom-0 h-[80%] bg-[radial-gradient(ellipse_at_bottom,rgba(47,128,237,0.20),transparent_70%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-[45%] bg-[radial-gradient(ellipse_at_bottom,rgba(200,169,106,0.10),transparent_75%)]" />
 
-      {/* Pillar wall — sharp layer */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex h-[78%] items-end gap-[6px] px-[2px] sm:gap-2 sm:px-2">
-        {PILLARS.map((p, i) => (
-          <motion.div
-            key={`sharp-${i}`}
-            initial={{ scaleY: 0, opacity: 0 }}
-            animate={{ scaleY: 1, opacity: p.o }}
-            transition={{
-              duration: 1.4,
-              ease,
-              delay: 0.25 + (i % 8) * 0.06 + Math.floor(i / 8) * 0.04,
-            }}
-            style={{
-              height: `${p.h}%`,
-              transformOrigin: "bottom",
-              background: p.g
-                ? "linear-gradient(to top, rgba(200,169,106,0.95) 0%, rgba(200,169,106,0.35) 35%, transparent 100%)"
-                : "linear-gradient(to top, rgba(47,128,237,0.95) 0%, rgba(47,128,237,0.35) 35%, transparent 100%)",
-            }}
-            className="flex-1 rounded-t-[2px]"
+        {BEAMS.map((beam, i) => (
+          <div
+            key={i}
+            className={`absolute bottom-0 -translate-x-1/2 rounded-full bg-gradient-to-t ${beam.from} to-transparent blur-2xl`}
+            style={{ left: beam.left, width: beam.w, height: beam.h }}
           />
         ))}
+
+        {/* Bottom vignette to ground the beams */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#05080C] to-transparent" />
       </div>
 
-      {/* Pillar wall — soft glow layer (mirrors the sharp layer with blur) */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex h-[78%] items-end gap-[6px] px-[2px] blur-[14px] sm:gap-2 sm:px-2">
-        {PILLARS.map((p, i) => (
-          <motion.div
-            key={`glow-${i}`}
-            initial={{ scaleY: 0, opacity: 0 }}
-            animate={{ scaleY: 1, opacity: p.o * 0.9 }}
-            transition={{
-              duration: 1.4,
-              ease,
-              delay: 0.25 + (i % 8) * 0.06 + Math.floor(i / 8) * 0.04,
-            }}
-            style={{
-              height: `${p.h}%`,
-              transformOrigin: "bottom",
-              background: p.g
-                ? "linear-gradient(to top, rgba(200,169,106,1) 0%, transparent 100%)"
-                : "linear-gradient(to top, rgba(47,128,237,1) 0%, transparent 100%)",
-            }}
-            className="flex-1"
-          />
-        ))}
-      </div>
-
-      {/* Top fade for text legibility */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[55%] bg-gradient-to-b from-[#05080C] via-[#05080C]/85 to-transparent" />
-
-      {/* Content */}
-      <div className="relative z-10 flex flex-1 items-center justify-center px-6 pb-[220px] text-center md:pb-[280px]">
+      {/* ── Centered content ──────────────────────────────────────────────── */}
+      <div className="relative z-10 flex flex-1 items-center justify-center px-6 pt-24 pb-40">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -97,77 +53,124 @@ export default function HeroSection() {
             hidden: {},
             visible: { transition: { staggerChildren: 0.12 } },
           }}
-          className="mx-auto flex max-w-5xl flex-col items-center"
+          className="flex max-w-4xl flex-col items-center text-center"
         >
-          {/* Eyebrow pill */}
+          {/* 1. Gold uppercase eyebrow label */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
             }}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/90 shadow-[0_1px_2px_rgba(0,0,0,0.3)] backdrop-blur"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/[0.06] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold shadow-[0_1px_2px_rgba(0,0,0,0.3)] backdrop-blur"
           >
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
             </span>
             Mauritius FSC-Regulated
           </motion.div>
 
-          {/* Headline */}
-          <div className="flex flex-col items-center">
-            <BlurText
-              text="INSTITUTIONAL LIQUIDITY"
-              renderAs="h1"
-              className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-white md:text-6xl justify-center"
-              animateBy="words"
-              delay={80}
-              direction="bottom"
-              stepDuration={0.4}
-            />
-            <BlurText
-              text="AGGREGATED "
-              renderAs="h1"
-              className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-white md:text-6xl justify-center"
-              animateBy="words"
-              delay={80}
-              direction="bottom"
-              stepDuration={0.4}
-            />
-            <BlurText
-              text="DELIVERED"
-              renderAs="h1"
-              className="text-5xl leading-[0.95] font-bold uppercase tracking-tighter text-white md:text-6xl justify-center"
-              animateBy="words"
-              delay={80}
-              direction="bottom"
-              stepDuration={0.4}
-            />
-          </div>
+          {/* 2. Headline - sentence case, weight 500, 72px desktop, -1.5% tracking */}
+          <BlurText
+            text="Institutional liquidity, aggregated and delivered"
+            renderAs="h1"
+            className="justify-center text-4xl leading-[1.04] font-medium tracking-[-0.015em] text-white sm:text-5xl lg:text-[72px] lg:leading-[1.0]"
+            animateBy="words"
+            delay={80}
+            direction="bottom"
+            stepDuration={0.4}
+          />
 
-          {/* Subtitle */}
+          {/* 3. Subtext paragraph */}
           <motion.p
             variants={{
               hidden: { opacity: 0, y: 16 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
             }}
-            className="mx-auto mt-6 max-w-xl text-base tracking-tighter leading-relaxed text-white/60 md:text-xl"
+            className="mt-6 max-w-xl text-base leading-relaxed tracking-tighter text-white/60 md:text-lg"
           >
-            Equivest is a Mauritius FSC-regulated Investment Dealer providing Prime-of-Prime liquidity, execution, and multi-asset market access. .
+            Equivest is a Mauritius FSC-regulated Investment Dealer that
+            aggregates institutional liquidity from multiple providers,
+            delivering execution and multi-asset market access.
           </motion.p>
 
-          {/* CTA */}
+          {/* 4 + 5. Primary (pill + arrow) + secondary buttons */}
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 12 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
             }}
-            className="mt-8"
+            className="mt-9 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row"
           >
-            <CTA text="Contact Us" mobile />
+            <a
+              href="#contact"
+              className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary py-2 pl-6 pr-2 text-base font-medium tracking-tighter text-white transition-colors duration-200 ease-out hover:bg-gold sm:w-auto"
+            >
+              Request Institutional Access
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#05080C] transition-transform duration-200 ease-out group-hover:translate-x-0.5">
+                <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              </span>
+            </a>
+
+            {/*
+              Secondary "Download Fact Sheet" button.
+              TODO (A8): replace href="#" with the fact-sheet PDF URL once the
+              owner provides it, and remove aria-disabled / pointer-events-none.
+            */}
+            <a
+              href="#"
+              aria-disabled="true"
+              title="Fact sheet coming soon"
+              className="pointer-events-none inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-6 py-3.5 text-base font-medium tracking-tighter text-white/70 opacity-70 backdrop-blur transition-colors duration-200 ease-out hover:border-white/30 hover:text-white sm:w-auto"
+            >
+              Download Fact Sheet
+            </a>
           </motion.div>
+
+          {/* 6. Thin licence strip */}
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
+            }}
+            className="mt-10 max-w-2xl text-[11px] uppercase leading-relaxed tracking-[0.12em] text-white/40"
+          >
+            GB24203378 &nbsp;|&nbsp; Investment Dealer (Full Service Dealer,
+            excluding Underwriting) &nbsp;|&nbsp; FSC Mauritius
+          </motion.p>
         </motion.div>
       </div>
+
+      {/* ── Bottom bar: factual stats (left) + scroll cue (right) ──────────── */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6, ease }}
+        className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-8"
+      >
+        <div className="flex items-end justify-between">
+          <div className="flex gap-10 md:gap-14">
+            {STATS.map((stat) => (
+              <div key={stat.label}>
+                <p className="text-3xl font-medium tracking-tighter text-white md:text-4xl">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-xs tracking-tight text-white/50">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="#regulation"
+            aria-label="Scroll to content"
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70 backdrop-blur transition-colors duration-200 ease-out hover:border-white/35 hover:text-white"
+          >
+            <ChevronDown className="h-5 w-5 animate-bounce" strokeWidth={1.5} />
+          </a>
+        </div>
+      </motion.div>
     </section>
   );
 }
