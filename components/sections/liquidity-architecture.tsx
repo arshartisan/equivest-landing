@@ -134,7 +134,7 @@ export default function LiquidityArchitectureSection() {
         <div className="hidden overflow-x-auto px-6 pb-2 md:-mx-6 md:block">
           <svg
             viewBox="0 0 1000 210"
-            className="mx-auto w-full min-w-[680px] max-w-5xl"
+            className="mx-auto aspect-[1000/210] w-full min-w-[680px] max-w-5xl"
             fill="none"
             role="img"
             aria-label="Equivest routing architecture: external liquidity providers route through the aggregation engine, Equivest core, and execution engine, which delivers to broker and institutional clients."
