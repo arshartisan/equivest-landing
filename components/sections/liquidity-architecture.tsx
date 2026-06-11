@@ -4,6 +4,35 @@ import { motion } from "framer-motion";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
+// Animation variants driven by ONE observer on the parent <svg>, instead of a
+// per-element whileInView on each SVG child. Safari's IntersectionObserver is
+// unreliable on SVG child nodes (which have no CSS layout box), so observing
+// them individually leaves them stuck at opacity:0 = blank diagram. The parent
+// <svg> is a sized, observable element, so this fires reliably everywhere.
+const routeLineV = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: { pathLength: 1, opacity: 1, transition: { duration: 1.2, ease } },
+};
+const arrowV = {
+  hidden: { opacity: 0 },
+  visible: (i: number) => ({
+    opacity: 1,
+    transition: { duration: 0.3, delay: 0.4 + i * 0.2, ease },
+  }),
+};
+const boxV = {
+  hidden: { opacity: 0, y: 16 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.12, ease },
+  }),
+};
+const outArrowV = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.4, delay: 1, ease } },
+};
+
 // Four-layer routing path (checklist B8). "Broker / Institutional Clients" is
 // intentionally NOT a layer - it is the arrow leaving Layer 4 (Execution Engine).
 const LAYERS = [
@@ -132,12 +161,18 @@ export default function LiquidityArchitectureSection() {
 
         {/* Desktop: SVG architecture diagram */}
         <div className="hidden overflow-x-auto px-6 pb-2 md:-mx-6 md:block">
-          <svg
+          <motion.svg
             viewBox="0 0 1000 210"
-            className="mx-auto aspect-[1000/210] w-full min-w-[680px] max-w-5xl"
+            width={1000}
+            height={210}
+            preserveAspectRatio="xMidYMid meet"
+            className="mx-auto aspect-[1000/210] h-auto w-full min-w-[680px] max-w-5xl"
             fill="none"
             role="img"
             aria-label="Equivest routing architecture: external liquidity providers route through the aggregation engine, Equivest core, and execution engine, which delivers to broker and institutional clients."
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
           >
             {/* Blue accent routing line - Layer 1 → Layer 4 */}
             <motion.line
@@ -148,10 +183,7 @@ export default function LiquidityArchitectureSection() {
               stroke="#2F80ED"
               strokeWidth="2.5"
               strokeLinecap="round"
-              initial={{ pathLength: 0, opacity: 0 }}
-              whileInView={{ pathLength: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, ease }}
+              variants={routeLineV}
             />
 
             {/* Directional arrowheads between consecutive layers */}
@@ -162,10 +194,8 @@ export default function LiquidityArchitectureSection() {
                   key={`arrow-${i}`}
                   points={`${ax - 5},${CENTER_Y - 5} ${ax + 5},${CENTER_Y} ${ax - 5},${CENTER_Y + 5}`}
                   fill="#2F80ED"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.4 + i * 0.2, ease }}
+                  custom={i}
+                  variants={arrowV}
                 />
               );
             })}
@@ -174,10 +204,8 @@ export default function LiquidityArchitectureSection() {
             {LAYERS.map((layer, i) => (
               <motion.g
                 key={layer.title.join(" ")}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.5, delay: i * 0.12, ease }}
+                custom={i}
+                variants={boxV}
               >
                 {/* EXTERNAL tag above Layer 1 */}
                 {layer.external && (
@@ -253,12 +281,7 @@ export default function LiquidityArchitectureSection() {
             ))}
 
             {/* Arrow OUT of Layer 4 → Broker / Institutional Clients */}
-            <motion.g
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 1, ease }}
-            >
+            <motion.g variants={outArrowV}>
               <line
                 x1={boxRight(3)}
                 y1={CENTER_Y}
@@ -289,7 +312,7 @@ export default function LiquidityArchitectureSection() {
                 Institutional Clients
               </text>
             </motion.g>
-          </svg>
+          </motion.svg>
         </div>
 
         {/* Bottom annotation */}
