@@ -25,7 +25,7 @@ const PLATFORMS = [
   },
   {
     name: "Finova",
-    logo: "/assets/images/platforms/finova.svg",
+    logo: "/assets/images/platforms/finva.png",
     span: "col-span-1 row-span-1",
   },
   {
@@ -57,6 +57,12 @@ const cardVariants = {
 };
 
 export default function PlatformsSection() {
+  const scrollToContact = () => {
+    document
+      .getElementById("contact")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <section id="platforms" className="border-t border-border bg-section px-6 py-24 md:py-32">
       <div className="mx-auto max-w-7xl">
@@ -80,7 +86,7 @@ export default function PlatformsSection() {
               transition={{ duration: 0.6, delay: 0.05, ease }}
               className="mt-4 text-[clamp(2rem,4.5vw,3.5rem)] font-medium leading-[1.1] tracking-tighter text-foreground"
             >
-              Multi-Platform
+              Multi Platform
               <br />
               <span className="text-gold">Connectivity</span>
             </motion.h2>
@@ -95,7 +101,7 @@ export default function PlatformsSection() {
           >
             Equivest provides reliable access to the world&apos;s most trusted
             trading platforms, giving traders the flexibility to choose their
-            preferred environment.
+            preferred environment
           </motion.p>
         </div>
 
@@ -122,7 +128,7 @@ export default function PlatformsSection() {
               </p>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground tracking-tighter">
                 Deep integration across each platform for reliable execution and
-                real-time connectivity.
+                real-time connectivity
               </p>
             </div>
           </motion.div>
@@ -219,13 +225,13 @@ export default function PlatformsSection() {
           >
             <p className="text-xl font-medium leading-snug tracking-tighter text-foreground md:text-2xl">
               Connect through your preferred platform, or integrate directly via{" "}
-              <span className="font-medium text-primary">FIX API.</span>
+              <span className="font-medium text-primary">FIX API</span>
             </p>
 
             <div className="w-full md:w-auto md:shrink-0">
               {/* Mobile fallback */}
               <a
-                href="#"
+                href="#contact"
                 className="inline-flex w-full items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground md:hidden"
               >
                 Get Started
@@ -233,7 +239,7 @@ export default function PlatformsSection() {
 
               {/* CTA on md+ */}
               <div className="hidden md:block">
-                <CTA text="Get Started" />
+                <CTA text="Get Started" onClick={scrollToContact} />
               </div>
             </div>
           </motion.div>

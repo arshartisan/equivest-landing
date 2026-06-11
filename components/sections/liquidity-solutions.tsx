@@ -124,7 +124,7 @@ export default function LiquiditySolutionsSection() {
               transition={{ duration: 0.6, ease }}
               className="text-[clamp(2rem,4vw,3rem)] font-medium leading-[1.1] tracking-tighter text-foreground"
             >
-              Multi-Asset
+              Multi Asset
               <br />
               <span className="text-gold">Liquidity</span>
             </motion.h2>
@@ -135,10 +135,10 @@ export default function LiquiditySolutionsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1, ease }}
-            className="max-w-sm text-base leading-relaxed tracking-tighter text-muted-foreground md:text-right"
+            className="max-w-sm text-lg leading-relaxed tracking-tighter text-muted-foreground md:text-right"
           >
             Access institutional liquidity across six major asset classes,
-            aggregated from Tier-1 providers with deep order books.
+            aggregated from Tier 1 providers with deep order books
           </motion.p>
         </div>
 

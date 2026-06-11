@@ -18,7 +18,6 @@ export default function Home() {
       <Navbar />
       <main className="">
         <HeroSection />
-        <RegulationSection />
         <LiquidityArchitectureSection />
         <LiquiditySolutionsSection />
         <ExecutionModelSection />
@@ -27,6 +26,7 @@ export default function Home() {
         <PlatformsSection />
         <WhyEquivestSection />
         <OnboardingSection />
+        <RegulationSection />
         <FinalCtaSection />
       </main>
       <Footer />

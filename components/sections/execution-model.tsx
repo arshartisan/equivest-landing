@@ -11,19 +11,19 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 // "External Execution" / "Dealing Desk" wording once that is confirmed.
 const BLOCKS = [
   {
-    label: "Smart-Order Routing",
+    label: "Smart Order Routing",
     description:
-      "Orders are routed intelligently across connected venues to capture the best available price at the moment of execution.",
+      "Orders are routed intelligently across connected venues to capture the best available price at the moment of execution",
   },
   {
     label: "External Execution",
     description:
-      "Trades are passed to external institutional liquidity providers, sourcing depth from multiple venues rather than a single book.",
+      "Trades are passed to external institutional liquidity providers, sourcing depth from multiple venues rather than a single book",
   },
   {
     label: "Dealing Desk",
     description:
-      "A dedicated dealing desk provides human oversight, real-time monitoring, and risk management across order flow.",
+      "A dedicated dealing desk provides human oversight, real time monitoring, and risk management across order flow",
   },
 ];
 

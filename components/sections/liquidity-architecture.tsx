@@ -9,12 +9,12 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 const LAYERS = [
   {
     title: ["External Liquidity", "Providers"],
-    caption: ["Tier-1 banks and non-bank", "sources - external venues"],
+    caption: ["Tier 1 banks and non-bank", "sources external venues"],
     external: true,
   },
   {
     title: ["Aggregation", "Engine"],
-    caption: ["Smart-order routing across", "multiple liquidity venues"],
+    caption: ["Smart order routing across", "multiple liquidity venues"],
   },
   {
     title: ["Equivest", "Core"],
@@ -22,7 +22,7 @@ const LAYERS = [
   },
   {
     title: ["Execution", "Engine"],
-    caption: ["Low-latency matching with", "dealing-desk oversight"],
+    caption: ["Low latency matching with", "dealing desk oversight"],
   },
 ];
 
@@ -61,7 +61,7 @@ export default function LiquidityArchitectureSection() {
           >
             Equivest aggregates liquidity from multiple institutional providers
             into a unified pricing environment, ensuring optimal execution and
-            pricing stability.
+            pricing stability
           </motion.p>
         </div>
 

@@ -19,7 +19,7 @@ const steps = [
     time: "Day 1",
     title: "Application & KYC",
     description:
-      "Submit your application with required documentation. Our streamlined KYC process ensures fast verification while maintaining full regulatory compliance.",
+      "Submit your application with required documentation. Our streamlined KYC process ensures fast verification while maintaining full regulatory compliance",
     icon: FileCheck,
     color: "#2F80ED",
   },
@@ -28,7 +28,7 @@ const steps = [
     time: "Days 2-5",
     title: "Compliance Review",
     description:
-      "Our compliance team conducts a thorough review of your application, assessing risk profiles and ensuring all regulatory requirements are met.",
+      "Our compliance team conducts a thorough review of your application, assessing risk profiles and ensuring all regulatory requirements are met",
     icon: ShieldCheck,
     color: "#C8A96A",
   },
@@ -37,7 +37,7 @@ const steps = [
     time: "Days 3-7",
     title: "Platform Setup",
     description:
-      "Configure your trading environment with custom platform settings, user roles, and API integrations tailored to your operational needs.",
+      "Configure your trading environment with custom platform settings, user roles, and API integrations tailored to your operational needs",
     icon: MonitorCog,
     color: "#2F80ED",
   },
@@ -46,7 +46,7 @@ const steps = [
     time: "Days 5-10",
     title: "Liquidity Configuration",
     description:
-      "Select and configure your liquidity feeds, pricing models, and risk parameters with guidance from our dealing desk specialists.",
+      "Select and configure your liquidity feeds, pricing models, and risk parameters with guidance from our dealing desk specialists",
     icon: Workflow,
     color: "#C8A96A",
   },
@@ -55,7 +55,7 @@ const steps = [
     time: "Day 14+",
     title: "Go Live",
     description:
-      "Launch your fully configured platform with ongoing support, real-time monitoring, and dedicated account management from day one.",
+      "Launch your fully configured platform with ongoing support, real time monitoring, and dedicated account management from day one",
     icon: Rocket,
     color: "#2F80ED",
   },
@@ -82,12 +82,12 @@ export default function OnboardingSection() {
             <h2 className="text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-medium leading-[1.15] tracking-tighter text-white">
               From application
               <br />
-              to go-live
+              to go live
             </h2>
           </div>
-          <p className="max-w-md text-base leading-relaxed tracking-tighter text-[#A0AEC0] md:text-right">
-            A structured five-step process designed to get you
-            operational with minimal friction and maximum support.
+          <p className="max-w-md text-lg leading-relaxed tracking-tighter text-[#A0AEC0] md:text-right">
+            A structured five step process designed to get you
+            operational with minimal friction and maximum support
           </p>
         </motion.div>
 

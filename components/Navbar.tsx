@@ -16,6 +16,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToContact = () => {
+    document
+      .getElementById("contact")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <header
       className={`fixed top-2 left-0 right-0 z-50 backdrop-blur-md mx-auto rounded-full overflow-hidden transition-colors duration-300 max-w-sm ${pastHero ? "bg-white/5" : "bg-black/10"}`}
@@ -43,7 +49,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="mr-1.5">
-          <CTA text="Institutional Access" compact />
+          <CTA text="Institutional Access" compact onClick={scrollToContact} />
         </div>
       </nav>
     </header>

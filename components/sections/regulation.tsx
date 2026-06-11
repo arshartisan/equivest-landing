@@ -15,16 +15,29 @@ const FILING_ROWS = [
     value: "Investment Dealer (Full Service Dealer, excluding Underwriting)",
   },
   { label: "Legal Entity", value: "Equivest (Mauritius) Limited" },
+  {
+    label: "Trade Name",
+    value: (
+      <>
+        <div>Equivest (Institutional Access)</div>
+        <div>London Trading Index (Retail Experience )</div>
+      </>
+    ),
+  },
   { label: "Code", value: "SEC-2.1B" },
   { label: "Issued", value: "29 November 2024" },
-  { label: "Registered Office", value: "-", pending: true },
+  {
+    label: "Registered Office",
+    value:
+      "The Cyberati Lounge, Ground Floor, The Catalyst, Silicon Avaenue, 40 Cybercity, 72201 1721-04 MU",
+  },
 ];
 
 export default function RegulationSection() {
   return (
     <section
       id="regulation"
-      className="border-t border-border bg-section px-6 py-24 md:py-32"
+      className="border-t border-border bg-background px-6 py-24 md:py-32"
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-20">
@@ -61,13 +74,8 @@ export default function RegulationSection() {
                   <dt className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
                     {row.label}
                   </dt>
-                  <dd
-                    className={`text-sm tracking-tight md:text-base ${row.pending
-                        ? "italic text-muted-foreground/60"
-                        : "text-foreground"
-                      }`}
-                  >
-                    {row.pending ? "Awaiting registered address" : row.value}
+                  <dd className="text-sm tracking-tight text-foreground md:text-base">
+                    {row.value}
                   </dd>
                 </div>
               ))}
@@ -79,7 +87,8 @@ export default function RegulationSection() {
               the Equivest licence record once the owner supplies it.
             */}
             <a
-              href="#"
+              href="https://opr.fscmauritius.org/ords/opr/r/fsc-opr/fsc-online-public-register-opr"
+              target="_blank"
               className="group mt-6 inline-flex items-center gap-2 text-sm font-medium tracking-tight text-primary transition-colors hover:text-gold"
             >
               View entity on FSC register

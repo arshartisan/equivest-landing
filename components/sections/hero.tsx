@@ -20,8 +20,8 @@ const BEAMS = [
 ];
 
 const STATS = [
-  { value: "6", label: "Asset classes" },
-  { value: "5", label: "Trading platforms" },
+  { value: "6", label: "Asset Classes" },
+  { value: "895", label: "Trading Instruments" },
 ];
 
 export default function HeroSection() {
@@ -67,14 +67,14 @@ export default function HeroSection() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-gold opacity-70" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-gold" />
             </span>
-            Mauritius FSC-Regulated
+            Mauritius FSC Regulated
           </motion.div>
 
           {/* 2. Headline - sentence case, weight 500, 72px desktop, -1.5% tracking */}
           <BlurText
-            text="Institutional liquidity, aggregated and delivered"
+            text="Institutional liquidity aggregated and delivered"
             renderAs="h1"
-            className="justify-center text-4xl leading-[1.04] font-medium tracking-[-0.015em] text-white sm:text-5xl lg:text-[72px] lg:leading-[1.0]"
+            className="justify-center text-4xl leading-[1.04] font-medium tracking-tighter text-white sm:text-5xl lg:text-[72px] lg:leading-[1.0]"
             animateBy="words"
             delay={80}
             direction="bottom"
@@ -89,9 +89,9 @@ export default function HeroSection() {
             }}
             className="mt-6 max-w-xl text-base leading-relaxed tracking-tighter text-white/60 md:text-lg"
           >
-            Equivest is a Mauritius FSC-regulated Investment Dealer that
+            Equivest is a Mauritius FSC regulated Investment Dealer that
             aggregates institutional liquidity from multiple providers,
-            delivering execution and multi-asset market access.
+            delivering execution and multi asset market access
           </motion.p>
 
           {/* 4 + 5. Primary (pill + arrow) + secondary buttons */}
@@ -110,20 +110,6 @@ export default function HeroSection() {
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#05080C] transition-transform duration-200 ease-out group-hover:translate-x-0.5">
                 <ArrowRight className="h-4 w-4" strokeWidth={2} />
               </span>
-            </a>
-
-            {/*
-              Secondary "Download Fact Sheet" button.
-              TODO (A8): replace href="#" with the fact-sheet PDF URL once the
-              owner provides it, and remove aria-disabled / pointer-events-none.
-            */}
-            <a
-              href="#"
-              aria-disabled="true"
-              title="Fact sheet coming soon"
-              className="pointer-events-none inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-6 py-3.5 text-base font-medium tracking-tighter text-white/70 opacity-70 backdrop-blur transition-colors duration-200 ease-out hover:border-white/30 hover:text-white sm:w-auto"
-            >
-              Download Fact Sheet
             </a>
           </motion.div>
 

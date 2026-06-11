@@ -67,9 +67,9 @@ export default function FinalCtaSection() {
                 hidden: { opacity: 0, y: 14 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease } },
               }}
-              className="mt-4 text-base leading-relaxed tracking-tight text-[#A0AEC0]"
+              className="mt-4 text-lg leading-relaxed tracking-tight text-[#A0AEC0]"
             >
-              Enquiries responded to within 1 business day.
+              Enquiries responded to within 1 business day
             </motion.p>
 
             {/* 4. Contact form - its submit button is the primary

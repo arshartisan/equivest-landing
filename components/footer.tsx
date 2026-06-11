@@ -176,26 +176,28 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5">
               {/* NOTE (A9): these mailboxes must be set up by the owner. */}
               <a
-                href="mailto:institutional@equivest.com"
+                href="mailto:institutional@equivest.org"
                 className="text-sm text-[#A0AEC0]/70 transition-colors duration-200 hover:text-white"
               >
-                institutional@equivest.com
+                institutional@equivest.org
               </a>
               <a
-                href="mailto:compliance@equivest.com"
+                href="mailto:compliance@equivest.org"
                 className="text-sm text-[#A0AEC0]/70 transition-colors duration-200 hover:text-white"
               >
-                compliance@equivest.com
+                compliance@equivest.org
               </a>
 
-              {/* NOTE (A1): Mauritius registered address pending from owner.
-                  The previous Cyprus address has been removed (A1 conflict). */}
               <address className="mt-3 text-sm not-italic leading-relaxed text-[#A0AEC0]/70">
                 Equivest (Mauritius) Limited
                 <br />
-                <span className="italic text-[#A0AEC0]/50">
-                  Registered office address to be confirmed
-                </span>
+                The Cyberati Lounge, Ground Floor
+                <br />
+                The Catalyst, Silicon Avenue
+                <br />
+                40 Cybercity
+                <br />
+                72201 1721-04 MU
               </address>
             </div>
           </motion.div>

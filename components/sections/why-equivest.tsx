@@ -18,37 +18,37 @@ const reasons = [
     icon: ShieldCheck,
     title: "Regulated infrastructure",
     description:
-      "Fully compliant frameworks ensuring institutional-grade security and regulatory adherence across all operations.",
+      "Fully compliant frameworks ensuring institutional-grade security and regulatory adherence across all operations",
   },
   {
     icon: Layers,
     title: "Aggregated liquidity",
     description:
-      "Deep liquidity pools sourced from top-tier providers, delivering tighter spreads and superior execution quality.",
+      "Deep liquidity pools sourced from top-tier providers, delivering tighter spreads and superior execution quality",
   },
   {
     icon: SlidersHorizontal,
     title: "Flexible pricing models",
     description:
-      "Customisable fee structures tailored to your trading volume, strategy, and operational requirements.",
+      "Customisable fee structures tailored to your trading volume, strategy, and operational requirements",
   },
   {
     icon: Building2,
     title: "Institutional onboarding",
     description:
-      "Streamlined KYC/AML processes and dedicated account management for fast, frictionless integration.",
+      "Streamlined KYC/AML processes and dedicated account management for fast, frictionless integration",
   },
   {
     icon: UsersRound,
     title: "Dealing desk oversight",
     description:
-      "Expert dealing desk support providing real-time monitoring, risk management, and trade execution assistance.",
+      "Expert dealing desk support providing real-time monitoring, risk management, and trade execution assistance",
   },
   {
     icon: MonitorSmartphone,
-    title: "Multi-platform compatibility",
+    title: "Multi platform compatibility",
     description:
-      "Seamless connectivity across MT4, MT5, and proprietary platforms with unified reporting and analytics.",
+      "Seamless connectivity across MT4, MT5, and proprietary platforms with unified reporting and analytics",
     featured: true,
   },
 ];
@@ -149,7 +149,7 @@ export default function WhyEquivestSection() {
                 Why Equivest
               </p>
               <h2 className="text-[clamp(1.75rem,3vw+0.5rem,2.75rem)] font-semibold leading-[1.15] tracking-tighter text-white">
-                Purpose-built for
+                Purpose built for
                 <br />
                 institutional scale
               </h2>
@@ -157,7 +157,7 @@ export default function WhyEquivestSection() {
             <p className="mt-4 text-base leading-relaxed text-[#A0AEC0] tracking-tighter max-w-md md:text-right">
               Whether you&apos;re expanding into new markets or optimising
               existing operations, our infrastructure is here to support every
-              step.
+              step
             </p>
           </motion.div>
         </div>

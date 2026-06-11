@@ -5,10 +5,12 @@ export default function CTA({
     text,
     mobile,
     compact,
+    onClick,
 }: {
     text: string;
     mobile?: boolean;
     compact?: boolean;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }) {
     const visibility = mobile
         ? "inline-flex w-full"
@@ -18,7 +20,7 @@ export default function CTA({
     const sizing = compact ? "px-4 py-5 text-sm" : "p-6 text-base";
 
     return (
-        <Button className={`rounded-full bg-primary ${sizing} capitalize font-medium text-white transition-transform duration-160 ease-out hover:bg-gold active:scale-[0.97] tracking-tighter ${visibility}`}>
+        <Button onClick={onClick} className={`rounded-full bg-primary ${sizing} capitalize font-medium text-white transition-transform duration-160 ease-out hover:bg-gold active:scale-[0.97] tracking-tighter ${visibility}`}>
             {text}
         </Button>
     )

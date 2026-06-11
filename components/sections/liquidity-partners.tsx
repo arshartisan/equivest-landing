@@ -68,12 +68,12 @@ export default function LiquidityPartnersSection() {
               transition={{ duration: 0.6, delay: 0.05, ease }}
               className="mt-4 text-[clamp(2.25rem,5.5vw,3.5rem)] font-medium leading-[1.05] tracking-tighter text-foreground"
             >
-              Aggregating World-Class
+              Aggregating World Class
               <br />
-              <span className="text-gold">Liquidity.</span>{" "}
+              <span className="text-gold">Liquidity</span>{" "}
               <span className="text-primary">Delivering</span>
               <br />
-              <span className="text-primary">Superior Execution.</span>
+              <span className="text-primary">Superior Execution</span>
             </motion.h2>
           </div>
 
@@ -103,17 +103,17 @@ export default function LiquidityPartnersSection() {
         >
           <p className="text-sm leading-relaxed text-muted-foreground md:text-base tracking-tight">
             We aggregate liquidity from a carefully selected network of
-            industry-leading global liquidity providers, giving our clients
+            industry leading global liquidity providers, giving our clients
             access to deep institutional liquidity, competitive pricing, tight
-            spreads, and fast, reliable trade execution.
+            spreads, and fast, reliable trade execution
           </p>
           <p className="text-sm leading-relaxed text-muted-foreground md:text-base tracking-tight">
-            Our advanced liquidity aggregation technology connects with top-tier
+            Our advanced liquidity aggregation technology connects with top tier
             financial institutions and liquidity partners, creating a robust
             trading environment built for institutional clients and professional
             counterparties. By combining multiple liquidity sources into a single
             pool, we help ensure greater market depth, improved pricing, and
-            enhanced trading conditions across global markets.
+            enhanced trading conditions across global markets
           </p>
         </motion.div>
 

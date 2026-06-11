@@ -59,8 +59,8 @@ export default function TechnologySection() {
               transition={{ duration: 0.6, delay: 0.1, ease }}
               className="max-w-sm text-base leading-relaxed tracking-tighter text-muted-foreground "
             >
-              Equivest integrates with industry-standard bridge and aggregation
-              technologies for reliable execution and connectivity.
+              Equivest integrates with industry standard bridge and aggregation
+              technologies for reliable execution and connectivity
             </motion.p>
           </div>
 
