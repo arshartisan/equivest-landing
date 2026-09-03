@@ -8,7 +8,7 @@ import { useState } from "react";
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 const assetClasses = [
-  { number: "01", name: "Forex", icon: "/assets/images/liquidity/forex.svg" },
+  { number: "01", name: "CFDs", icon: "/assets/images/liquidity/forex.svg" },
   { number: "02", name: "Metals", icon: "/assets/images/liquidity/metal.svg" },
   { number: "03", name: "Indices", icon: "/assets/images/liquidity/indices.svg" },
   { number: "04", name: "Commodities", icon: "/assets/images/liquidity/commodity.svg" },

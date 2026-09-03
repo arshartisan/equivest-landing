@@ -48,7 +48,7 @@ const reasons = [
     icon: MonitorSmartphone,
     title: "Multi platform compatibility",
     description:
-      "Seamless connectivity across MT4, MT5, and proprietary platforms with unified reporting and analytics",
+      "Seamless connectivity and proprietary platforms with unified reporting and analytics",
     featured: true,
   },
 ];

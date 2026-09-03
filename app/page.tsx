@@ -22,8 +22,8 @@ export default function Home() {
         <LiquiditySolutionsSection />
         <ExecutionModelSection />
         <LiquidityPartnersSection />
-        <TechnologySection />
-        <PlatformsSection />
+        {/* <TechnologySection /> */}
+        {/* <PlatformsSection /> */}
         <WhyEquivestSection />
         <OnboardingSection />
         <RegulationSection />
