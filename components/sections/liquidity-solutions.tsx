@@ -8,12 +8,12 @@ import { useState } from "react";
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 const assetClasses = [
-  { number: "01", name: "CFDs", icon: "/assets/images/liquidity/forex.svg" },
-  { number: "02", name: "Metals", icon: "/assets/images/liquidity/metal.svg" },
-  { number: "03", name: "Indices", icon: "/assets/images/liquidity/indices.svg" },
-  { number: "04", name: "Commodities", icon: "/assets/images/liquidity/commodity.svg" },
-  { number: "05", name: "Equities", icon: "/assets/images/liquidity/equity.svg" },
-  { number: "06", name: "Derivatives", icon: "/assets/images/liquidity/derivatives.svg" },
+  { number: "01", name: "Forex", tag: "CFD", icon: "/assets/images/liquidity/forex.svg" },
+  { number: "02", name: "Metals", tag: "CFD", icon: "/assets/images/liquidity/metal.svg" },
+  { number: "03", name: "Indices", tag: "CFD", icon: "/assets/images/liquidity/indices.svg" },
+  { number: "04", name: "Commodities", tag: "CFD", icon: "/assets/images/liquidity/commodity.svg" },
+  { number: "05", name: "Equities", tag: "CFD", icon: "/assets/images/liquidity/equity.svg" },
+  // { number: "06", name: "Derivatives", tag: "CFD", icon: "/assets/images/liquidity/derivatives.svg" },
 ];
 
 function AssetRow({
@@ -56,10 +56,15 @@ function AssetRow({
           {asset.number}
         </span>
 
-        {/* Name */}
-        <h3 className="text-lg font-semibold tracking-tight text-foreground transition-colors duration-300 group-hover:text-gold md:text-3xl">
-          {asset.name}
-        </h3>
+        {/* Name + instrument tag */}
+        <div className="flex items-baseline gap-2 md:gap-2.5">
+          <h3 className="text-lg font-semibold tracking-tight text-foreground transition-colors duration-300 group-hover:text-gold md:text-3xl">
+            {asset.name}
+          </h3>
+          <span className="translate-y-[-0.15em] rounded-full border border-border/80 bg-foreground/[0.04] px-2 py-[3px] text-[9px] font-semibold uppercase leading-none tracking-[0.12em] text-muted-foreground transition-colors duration-300 group-hover:border-gold/40 group-hover:bg-gold/10 group-hover:text-gold md:text-[10px]">
+            {asset.tag}
+          </span>
+        </div>
 
         {/* Arrow / asset icon — right aligned */}
         <div className="relative ml-auto flex h-16 w-16 shrink-0 items-center justify-center md:h-20 md:w-20">
